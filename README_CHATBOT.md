@@ -71,8 +71,8 @@ The website includes an integrated chatbot widget that:
 **Role:** Data Scientist & Content Creator  
 **Location:** Khanna, Punjab, India  
 **Email:** anshdeep200618@gmail.com  
-**GitHub:** [Ansh200618](https://github.com/Ansh200618)  
-**LinkedIn:** [anshdeep-singh-editor](https://www.linkedin.com/in/anshdeep-singh-editor)  
+**GitHub:** [anshdeepofficial1](https://github.com/anshdeepofficial1)  
+**LinkedIn:** [anshdeepofficial1](https://www.linkedin.com/in/anshdeepofficial1/)  
 **Phone:** +91 97815-70098
 
 ## Design Philosophy
