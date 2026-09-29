@@ -4,13 +4,13 @@
 
 **A modern personal portfolio showcasing projects, skills, education, certifications, and developer work.**
 
-[![Live Website](https://img.shields.io/badge/Live-anshcreates.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://anshcreates.vercel.app/)
+[![Live Website](https://img.shields.io/badge/Live-anshdeepofficial1.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://anshdeepofficial1.vercel.app/)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)
 
-<a href="https://github.com/sponsors/anshdeepofficial"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" /></a>
-<a href="https://buymeacoffee.com/anshdeepofficial"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000" alt="Buy Me a Coffee" /></a>
+<a href="https://github.com/sponsors/anshdeepofficial1"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" /></a>
+<a href="https://buymeacoffee.com/anshdeepofficial1"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000" alt="Buy Me a Coffee" /></a>
 
 </div>
 
@@ -40,12 +40,12 @@ This repository powers my personal portfolio website. It presents my work in a r
 
 ## 🌐 Live Website
 
-**[anshcreates.vercel.app](https://anshcreates.vercel.app/)**
+**[anshdeepofficial1.vercel.app](https://anshdeepofficial1.vercel.app/)**
 
 ## ⚡ Run Locally
 
 ```bash
-git clone https://github.com/anshdeepofficial/Portfolio.git
+git clone https://github.com/anshdeepofficial1/Portfolio.git
 cd Portfolio
 ```
 
@@ -70,10 +70,10 @@ Portfolio/
 
 ## 🤝 Connect
 
-Explore my repositories and current projects from the **[anshdeepofficial GitHub profile](https://github.com/anshdeepofficial)**.
+Explore my repositories and current projects from the **[anshdeepofficial1 GitHub profile](https://github.com/anshdeepofficial1)**.
 
 ---
 
 <div align="center">
-Designed & built by <a href="https://github.com/anshdeepofficial">Anshdeep Singh</a>
+Designed & built by <a href="https://github.com/anshdeepofficial1">Anshdeep Singh</a>
 </div>
