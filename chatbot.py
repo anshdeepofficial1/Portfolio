@@ -33,28 +33,28 @@ def portfolio_chatbot():
             print("Portfolio_Bot: Which project? Try: 'weather analysis' or 'payroll system' or 'task management'")
 
         elif user == "weather analysis" or user == "weather data analysis":
-            print("Portfolio_Bot: The Weather Data Analysis project analyzes weather patterns using Python. Check it out: https://github.com/Ansh200618/Weather-data-analysis")
+            print("Portfolio_Bot: The Weather Data Analysis project analyzes weather patterns using Python. Check it out: https://github.com/anshdeepofficial1/Weather-data-analysis")
 
         elif user == "payroll system" or user == "employee payroll":
-            print("Portfolio_Bot: The Employee Payroll Management System is built with Python for managing employee records. Visit: https://github.com/Ansh200618/Employee-Payroll-Management-System")
+            print("Portfolio_Bot: The Employee Payroll Management System is built with Python for managing employee records. Visit: https://github.com/anshdeepofficial1/Employee-Payroll-Management-System")
 
         elif user == "task management" or user == "task website":
-            print("Portfolio_Bot: The Task Management Website helps organize and track tasks efficiently. See: https://github.com/Ansh200618/Task-Management-Website")
+            print("Portfolio_Bot: The Task Management Website helps organize and track tasks efficiently. See: https://github.com/anshdeepofficial1/Task-Management-Website")
 
         elif user == "what certifications does he have?" or user == "certifications":
             print("Portfolio_Bot: Anshdeep has completed certifications from IBM (Data Structures), University of Michigan (Python for AI), Infosys (Web Development), and LinkedIn Learning.")
 
         elif user == "how can i contact him?" or user == "contact":
-            print("Portfolio_Bot: Email: anshdeep200618@gmail.com | GitHub: Ansh200618 | LinkedIn: anshdeep-singh-editor | Phone: +91 97815-70098")
+            print("Portfolio_Bot: Email: anshdeep200618@gmail.com | GitHub: anshdeepofficial1 | LinkedIn: anshdeepofficial1 | Phone: +91 97815-70098")
 
         elif user == "where is he from?" or user == "location":
             print("Portfolio_Bot: Anshdeep is from Khanna, Punjab, India.")
 
         elif user == "what is his github?" or user == "github":
-            print("Portfolio_Bot: GitHub: https://github.com/Ansh200618")
+            print("Portfolio_Bot: GitHub: https://github.com/anshdeepofficial1")
 
         elif user == "what is his linkedin?" or user == "linkedin":
-            print("Portfolio_Bot: LinkedIn: https://www.linkedin.com/in/anshdeep-singh-editor")
+            print("Portfolio_Bot: LinkedIn: https://www.linkedin.com/in/anshdeepofficial1/")
 
         elif user == "what is his email?" or user == "email":
             print("Portfolio_Bot: Email: anshdeep200618@gmail.com")
