@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anshdeep Singh coding and developer portfolio." />
+  <link rel="canonical" href="https://www.singhworks.com/coding/" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>Anshdeep Singh — Coding</title>
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0C0C0C}
+    body{font-family:Arial,Helvetica,sans-serif;color:#D7E2EA}
+    .portfolio-mode{
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      background:rgba(12,12,12,.96);
+      border-bottom:1px solid rgba(215,226,234,.12);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+    .mode-switch{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      width:min(330px,100%);
+      padding:4px;
+      border:1px solid rgba(215,226,234,.14);
+      border-radius:16px;
+      background:rgba(255,255,255,.045);
+      box-shadow:0 10px 30px rgba(0,0,0,.28);
+    }
+    .mode-switch a{
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:12px;
+      color:rgba(215,226,234,.66);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:.02em;
+      transition:.2s ease;
+    }
+    .mode-switch a:hover{color:#fff;background:rgba(255,255,255,.05)}
+    .mode-switch a.active{
+      color:#fff;
+      background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);
+      box-shadow:0 5px 18px rgba(182,0,168,.22),inset 0 0 0 1px rgba(255,255,255,.18);
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.9}
+    iframe{display:block;width:100%;height:calc(100vh - 64px);border:0;background:#0C0C0C}
+    @media(max-width:520px){
+      .portfolio-mode{height:58px;padding:8px 12px}
+      .mode-switch{width:100%;max-width:320px;border-radius:14px}
+      .mode-switch a{min-height:38px;font-size:13px}
+      iframe{height:calc(100vh - 58px)}
+    }
+  </style>
+</head>
+<body>
+  <header class="portfolio-mode" aria-label="Portfolio type">
+    <nav class="mode-switch">
+      <a class="active" href="/coding/" aria-current="page"><span class="dot"></span>Coding</a>
+      <a href="/editing/"><span class="dot"></span>Editing</a>
+    </nav>
+  </header>
+  <iframe src="/coding-site.html" title="Anshdeep Singh coding portfolio"></iframe>
+</body>
+</html>
