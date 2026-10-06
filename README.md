@@ -36,11 +36,15 @@ This repository powers my personal portfolio website. It presents my work in a r
 | --- | --- |
 | Frontend | HTML5, CSS3, Vanilla JavaScript |
 | Chatbot utility | Python |
-| Hosting | Vercel / static web deployment |
+| Hosting | Vercel |
 
 ## 🌐 Live Website
 
-**[anshdeepofficial1.vercel.app](https://anshdeepofficial1.vercel.app/)**
+**Main:** [anshdeepofficial1.vercel.app](https://anshdeepofficial1.vercel.app/)
+
+**Coding:** [anshdeepofficial1.vercel.app/coding](https://anshdeepofficial1.vercel.app/coding/)
+
+**Editing:** [anshdeepofficial1.vercel.app/editing](https://anshdeepofficial1.vercel.app/editing/)
 
 ## ⚡ Run Locally
 
@@ -62,10 +66,13 @@ python chatbot.py
 ```text
 Portfolio/
 ├── index.html
+├── coding/
+│   └── index.html
+├── editing/
+│   └── index.html
+├── coding-site.html
 ├── chatbot.py
-├── README_CHATBOT.md
-├── CNAME
-└── .github/workflows/static.yml
+└── README_CHATBOT.md
 ```
 
 ## 🤝 Connect
