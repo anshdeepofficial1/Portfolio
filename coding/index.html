@@ -3,72 +3,820 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Anshdeep Singh coding and developer portfolio." />
-  <link rel="canonical" href="https://anshdeepofficial1.vercel.app/coding/" />
+  <meta name="description" content="Anshdeep Singh - Developer and creative web designer portfolio featuring front-end development, UI/UX, SQL, JavaScript, Supabase, GitHub projects, certifications, and BCA Data Science details." />
+  <meta name="keywords" content="Anshdeep Singh, Anshdeep portfolio, web developer, front-end developer, UI UX designer, JavaScript, TypeScript, React, Tailwind CSS, Supabase, SQL, GitHub projects, BCA Data Science" />
+  <meta name="author" content="Anshdeep Singh" />
+  <title>Anshdeep Singh — Developer Portfolio</title><link rel="canonical" href="https://anshdeepofficial1.vercel.app/coding/">
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <title>Anshdeep Singh — Coding</title>
-  <style>
-    *{box-sizing:border-box}
-    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0C0C0C}
-    body{font-family:Arial,Helvetica,sans-serif;color:#D7E2EA}
-    .portfolio-mode{
-      height:64px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 16px;
-      background:rgba(12,12,12,.96);
-      border-bottom:1px solid rgba(215,226,234,.12);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-    }
-    .mode-switch{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      width:min(330px,100%);
-      padding:4px;
-      border:1px solid rgba(215,226,234,.14);
-      border-radius:16px;
-      background:rgba(255,255,255,.045);
-      box-shadow:0 10px 30px rgba(0,0,0,.28);
-    }
-    .mode-switch a{
-      min-height:42px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      border-radius:12px;
-      color:rgba(215,226,234,.66);
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
-      letter-spacing:.02em;
-      transition:.2s ease;
-    }
-    .mode-switch a:hover{color:#fff;background:rgba(255,255,255,.05)}
-    .mode-switch a.active{
-      color:#fff;
-      background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);
-      box-shadow:0 5px 18px rgba(182,0,168,.22),inset 0 0 0 1px rgba(255,255,255,.18);
-    }
-    .dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.9}
-    iframe{display:block;width:100%;height:calc(100vh - 64px);border:0;background:#0C0C0C}
-    @media(max-width:520px){
-      .portfolio-mode{height:58px;padding:8px 12px}
-      .mode-switch{width:100%;max-width:320px;border-radius:14px}
-      .mode-switch a{min-height:38px;font-size:13px}
-      iframe{height:calc(100vh - 58px)}
-    }
-  </style>
+
+  
+
+  <link rel="stylesheet" href="/portfolio.css">
 </head>
-<body>
-  <header class="portfolio-mode" aria-label="Portfolio type">
-    <nav class="mode-switch">
-      <a class="active" href="/coding/" aria-current="page"><span class="dot"></span>Coding</a>
-      <a href="/editing/"><span class="dot"></span>Editing</a>
-    </nav>
-  </header>
-  <iframe src="/coding-site.html" title="Anshdeep Singh coding portfolio"></iframe>
+<body><a class="skip-link" href="#home">Skip to content</a><header class="site-header"><nav class="site-nav" aria-label="Portfolio navigation"><a class="site-brand" href="#home"><span>AS.</span>Anshdeep Singh</a><div class="mode-switch" aria-label="Portfolio type"><a href="/coding/" aria-current="page">Coding</a><a href="/editing/" >Editing</a></div><div class="site-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#resume">Resume</a><a href="#contact">Contact</a><a href="#chatbotPanel" data-chat-open>Chat</a></div></nav></header><main class="page"><section class="hero" id="home"><div><p class="eyebrow">Developer &amp; interface designer · Punjab, India</p><h1>Anshdeep<br>Singh<span>.</span></h1><p class="hero-subtitle">I build apps, websites and practical tools, with an eye for the interface as well as the code. BCA Data Science student at Chandigarh University.</p><div class="hero-actions"><a class="btn primary" href="#projects">Explore projects →</a><a class="btn" href="/RESUME.pdf" download>Download résumé</a></div></div><aside class="hero-index" aria-label="Featured projects"><div class="index-top"><span>Selected work</span><span>2026</span></div><a class="index-row" href="https://anidashweb.vercel.app/" target="_blank" rel="noopener"><span>01</span><div><strong>AniDash</strong><small>Anime discovery &amp; tracking</small></div><span>↗</span></a><a class="index-row" href="https://vybetune.vercel.app/" target="_blank" rel="noopener"><span>02</span><div><strong>VYBE</strong><small>Android music player</small></div><span>↗</span></a><a class="index-row" href="https://copycloud.me/" target="_blank" rel="noopener"><span>03</span><div><strong>CopyCloud</strong><small>Cross-device file transfer</small></div><span>↗</span></a><a class="index-row" href="https://github.com/anshdeepofficial1/NOVA" target="_blank" rel="noopener"><span>04</span><div><strong>NOVA</strong><small>Operating system project</small></div><span>↗</span></a></aside></section>
+
+    <section class="marquee-section" id="motion">
+      <div class="marquee-stack">
+        <div class="marquee-row marquee-right" id="marqueeRight"></div>
+        <div class="marquee-row marquee-left" id="marqueeLeft"></div>
+      </div>
+      <div class="github-stats-strip" id="githubStatsStrip"></div>
+    </section>
+
+    <section class="about" id="about">
+      
+      
+      
+      
+
+      <div class="about-content">
+        <h2 class="section-title-gradient hero-heading fade-in" style="--fade-y:40px;">About me</h2>
+        <p class="animated-text" id="animatedAboutText">I’m a BCA Data Science undergraduate at Chandigarh University. My work spans front-end development, UI design, SQL and applications that solve everyday problems. I also edit video and create visual assets.</p>
+        <a class="contact-btn fade-in contact-trigger" href="#contact" data-contact-trigger>
+          Contact Me
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <h2 class="section-title-dark fade-in">Skills</h2>
+      <div class="skills-list" id="skillsList"></div>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2 class="section-title-gradient hero-heading fade-in">Selected projects</h2>
+      <div class="projects-wrap" id="projectsWrap"></div>
+    </section>
+
+    <section class="resume" id="resume">
+      <div class="resume-grid">
+        <div class="resume-title-box fade-in">
+          <h2 class="resume-title hero-heading">Resume</h2>
+          <a class="resume-download-btn" id="downloadResumeBtn" href="/RESUME.pdf" download="Anshdeep-Singh-Resume.pdf">
+            Download Resume
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+          </a>
+          
+        </div>
+        <div class="resume-cards">
+          <article class="resume-card fade-in" style="--fade-delay:100ms;">
+            <div class="resume-card-head">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3.5 2 8.5 2 12 0v-5"></path><path d="M22 10v6"></path></svg>
+              <h3>Education</h3>
+            </div>
+            <p class="strong">BCA – Data Science (Hons. With Research)</p>
+            <p>Chandigarh University, Mohali, Punjab • 2028 • CGPA 6.5</p>
+            <p style="margin-top: 0.75rem;">Relevant Coursework: Web Technologies, Front-End Development, UI/UX Design</p>
+          </article>
+
+          <article class="resume-card fade-in" style="--fade-delay:200ms;">
+            <h3 style="margin-bottom: 1rem;">Certifications</h3>
+            <ul class="cert-list">
+              <li>Python for Data Science, AI & Development — IBM, 2025</li>
+              <li>Responsive Web Design — Coursera, 2025</li>
+              <li>Design Thinking and Creativity for Innovation — 2024</li>
+            </ul>
+          </article>
+
+          <article class="resume-card fade-in" style="--fade-delay:300ms;">
+            <h3 style="margin-bottom: 1rem;">All GitHub Repositories</h3>
+            <div class="repo-cloud" id="repoCloud"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-wrap">
+        <h2 class="contact-title fade-in">Contact</h2>
+        <div class="contact-grid">
+          <a class="contact-card fade-in" style="--fade-delay:0ms;" href="mailto:anshdeepofficial1@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+            <p class="contact-label">Email</p>
+            <p class="contact-value">anshdeepofficial1@gmail.com</p>
+          </a>
+
+          <a class="contact-card fade-in" style="--fade-delay:80ms;" href="tel:+919781570098">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.45 2.1L8 9.7a16 16 0 0 0 6.3 6.3l1.3-1.25a2 2 0 0 1 2.1-.45c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"></path></svg>
+            <p class="contact-label">Phone</p>
+            <p class="contact-value">+91 97815 70098</p>
+          </a>
+
+          <a class="contact-card fade-in" style="--fade-delay:160ms;" href="https://github.com/anshdeepofficial1/" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1.35-3.7c4.5-.5 8.35-2.2 8.35-9.8A7.6 7.6 0 0 0 20 0.9 7 7 0 0 0 19.9 5s-1.7-.55-5.6 2.1a19.4 19.4 0 0 0-10.2 0C.2 4.45-1.5 5-1.5 5A7 7 0 0 0-1.4.9 7.6 7.6 0 0 0-3.4 4.5c0 7.6 3.85 9.3 8.35 9.8A4.8 4.8 0 0 0 3.6 18v4" transform="translate(3 1)"></path><path d="M9 18c-4.5 2-5-2-7-2"></path></svg>
+            <p class="contact-label">GitHub</p>
+            <p class="contact-value">anshdeepofficial1</p>
+          </a>
+
+          <a class="contact-card fade-in" style="--fade-delay:240ms;" href="https://www.linkedin.com/in/anshdeepofficial1/" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <p class="contact-label">LinkedIn</p>
+            <p class="contact-value">anshdeepofficial1</p>
+          </a>
+
+          <a class="contact-card fade-in" style="--fade-delay:320ms;" href="https://www.instagram.com/anshdeepofficial1/" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg>
+            <p class="contact-label">Instagram</p>
+            <p class="contact-value">anshdeepofficial1</p>
+          </a>
+        </div>
+
+        <div class="contact-cta fade-in" style="--fade-delay:250ms;">
+          <div>
+            <p class="location-line">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Khanna, Punjab
+            </p>
+            <h3 class="cta-heading">Let's build something useful.</h3>
+          </div>
+          <a class="contact-btn contact-trigger" href="#contact" data-contact-trigger>
+            Contact Me
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><span>© 2026 Anshdeep Singh</span><a href="/editing/">Explore editing portfolio →</a></footer><div class="contact-modal" id="contactModal" aria-hidden="true">
+      <div class="contact-modal-backdrop" data-close-contact></div>
+      <div class="contact-modal-card" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+        <button class="contact-modal-close" type="button" data-close-contact aria-label="Close contact details">×</button>
+        <p class="contact-modal-label">Contact Details</p>
+        <h3 id="contactModalTitle">Contact Anshdeep Singh</h3>
+        <div class="contact-modal-links">
+          <a href="mailto:anshdeepofficial1@gmail.com"><span>Email</span><strong>anshdeepofficial1@gmail.com</strong></a>
+          <a href="tel:+919781570098"><span>Mobile</span><strong>+91 97815 70098</strong></a>
+          <a href="https://www.instagram.com/anshdeepofficial1/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@anshdeepofficial1</strong></a>
+          <a href="https://www.linkedin.com/in/anshdeepofficial1/" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>anshdeepofficial1</strong></a>
+          <a href="https://github.com/anshdeepofficial1/" target="_blank" rel="noreferrer"><span>GitHub</span><strong>anshdeepofficial1</strong></a>
+        </div>
+        <a class="contact-modal-bottom" href="#contact" data-close-contact>View full contact section</a>
+      </div>
+    </div>
+
+    <button class="chatbot-toggle" id="chatbotToggle" type="button" aria-controls="chatbotPanel" aria-expanded="false">Chat</button>
+    <section class="chatbot-panel" id="chatbotPanel" aria-hidden="true">
+      <div class="chatbot-head">
+        <h3>Portfolio Chatbot</h3>
+        <button class="chatbot-close" type="button" id="chatbotClose" aria-label="Close chatbot">×</button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages" aria-live="polite"></div>
+      <div class="chatbot-chips">
+        <button class="chat-chip" type="button" data-chat-chip="skills">Skills</button>
+        <button class="chat-chip" type="button" data-chat-chip="projects">Projects</button>
+        <button class="chat-chip" type="button" data-chat-chip="contact">Contact</button>
+        <button class="chat-chip" type="button" data-chat-chip="education">Education</button>
+      </div>
+      <form class="chatbot-form" id="chatbotForm">
+        <input class="chatbot-input" id="chatbotInput" type="text" placeholder="Ask about skills, projects, contact..." autocomplete="off" aria-label="Chat message input" />
+        <button class="chatbot-send" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const RESUME_PDF_URL = '/RESUME.pdf';
+    const CHATBOT_GREETING_PATTERN = /^(hi|hello|hey)([\s!,.].*)?$/;
+    const CHATBOT_WELCOME_MESSAGE = "Hi! I'm the portfolio chatbot. Ask me about Anshdeep's skills, projects, education, or contact details.";
+
+    const techStack = [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'TypeScript',
+      'React',
+      'Tailwind CSS',
+      'Supabase',
+      'MySQL',
+      'GitHub',
+      'VS Code',
+      'Python',
+      'R',
+      'UI/UX Design',
+      'Video Editing'
+    ];
+
+    const githubStats = [
+      {
+        value: '20+',
+        label: 'GitHub Repositories',
+        description: 'Public projects across web, data, utilities, AI, and creative tools.'
+      },
+      {
+        value: '8+',
+        label: 'Major Projects',
+        description: 'Focused portfolio projects with practical features and real use cases.'
+      },
+      {
+        value: '3',
+        label: 'Certifications',
+        description: 'IBM, Coursera, and innovation/design-thinking learning credentials.'
+      },
+      {
+        value: 'BCA',
+        label: 'Data Science Student',
+        description: 'Pursuing BCA Data Science Hons. with Research at Chandigarh University.'
+      },
+      {
+        value: 'Front-End',
+        label: 'Developer Focus',
+        description: 'Responsive websites, landing pages, dashboards, and UI interactions.'
+      },
+      {
+        value: 'UI/UX',
+        label: 'Design Focused',
+        description: 'Premium layouts, clean visual hierarchy, motion, and user-friendly flows.'
+      }
+    ];
+
+    const skills = [
+      {
+        no: '01',
+        title: 'Front-End Development',
+        description: 'Responsive websites and web apps using HTML, CSS, JavaScript, TypeScript, Tailwind CSS, and modern UI systems.',
+        icon: '<path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path><path d="m14 4-4 16"></path>'
+      },
+      {
+        no: '02',
+        title: 'Database & SQL',
+        description: 'MySQL, SQL fundamentals, data structures, and practical database-backed project workflows.',
+        icon: '<ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path>'
+      },
+      {
+        no: '03',
+        title: 'UI/UX Design',
+        description: 'Premium layouts, visual hierarchy, motion-first landing pages, dark themes, and user-friendly interfaces.',
+        icon: '<circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 22a10 10 0 1 1 10-10c0 2.2-1.8 4-4 4h-1.5a2.5 2.5 0 0 0-2 4 2.5 2.5 0 0 1-2.5 2z"></path>'
+      },
+      {
+        no: '04',
+        title: 'Creative Content',
+        description: 'Video editing, digital storytelling, brand visuals, and polished social media-ready creative assets.',
+        icon: '<rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M7 3v18"></path><path d="M17 3v18"></path><path d="M3 8h4"></path><path d="M17 8h4"></path><path d="M3 16h4"></path><path d="M17 16h4"></path>'
+      },
+      {
+        no: '05',
+        title: 'Self-Learning & Problem Solving',
+        description: 'Logical thinking, detail-driven execution, fast iteration, GitHub workflows, and deployment-focused development.',
+        icon: '<path d="M12 3 14.2 8.8 20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2L12 3z"></path><path d="M19 3v4"></path><path d="M21 5h-4"></path><path d="M5 17v3"></path><path d="M6.5 18.5h-3"></path>'
+      }
+    ];
+
+    const projects = [
+{"name":"AniDash","category":"Android anime app","description":"Anime discovery, watchlists, episode tracking and a dedicated web companion.","tech":["Flutter","Dart","Android"],"github":"https://github.com/anshdeepofficial1/AniDash","live":"https://anidashweb.vercel.app/","webapp":"https://anidashgo.vercel.app/","images":[]},
+{"name":"VYBE","category":"Android music player","description":"A music player combining local music and online discovery with a focused listening interface.","tech":["Android","Music","Material Design"],"github":"https://github.com/anshdeepofficial1/VYBE","live":"https://vybetune.vercel.app/","webapp":null,"images":[]},
+{"name":"NOVA","category":"Operating system project","description":"A web-native desktop and Linux-based operating system project exploring compatibility and runtime architecture.","tech":["Rust","Tauri","React"],"github":"https://github.com/anshdeepofficial1/NOVA","live":"https://github.com/anshdeepofficial1/NOVA","webapp":null,"images":[]},
+{"name":"ZYLO","category":"Android media app","description":"A media browsing and playback application for Android.","tech":["Android","Media"],"github":"https://github.com/anshdeepofficial1/ZYLO","live":"https://github.com/anshdeepofficial1/ZYLO","webapp":null,"images":[]},
+{"name":"Pitchcraft","category":"Local gallery","description":"Photo organization, on-device face grouping and gallery management.","tech":["Android","Machine Learning"],"github":"https://github.com/anshdeepofficial1/Pitchcraft","live":"https://github.com/anshdeepofficial1/Pitchcraft","webapp":null,"images":[]},
+{"name":"iSide","category":"iOS tooling","description":"A web interface for iOS app installation and signing workflows.","tech":["Web","iOS"],"github":"https://github.com/anshdeepofficial1/iSide","live":"https://github.com/anshdeepofficial1/iSide","webapp":null,"images":[]},
+{"name":"ZMB","category":"2D animation workflow","description":"An experimental repository for short animated stories and automated video production.","tech":["Animation","Automation"],"github":"https://github.com/anshdeepofficial1/ZMB","live":"https://github.com/anshdeepofficial1/ZMB","webapp":null,"images":[]},
+{"name":"SocialBoost","category":"Social media tools","description":"A project for social content workflows.","tech":["Web","Social"],"github":"https://github.com/anshdeepofficial1/SocialBoost","live":"https://socialboost-coral-ten.vercel.app/","webapp":null,"images":[]},
+
+      {
+        no: '01',
+        name: 'Copy Cloud',
+        category: 'Online Clipboard Web App',
+        description: 'A modern no-login online clipboard for transferring text and files between devices using short codes, QR retrieval, Supabase storage, 40 MB file sharing, auto-expiry, and custom themes.',
+        tech: ['TypeScript', 'Supabase', 'Tailwind CSS', 'JavaScript'],
+        github: 'https://github.com/anshdeepofficial1/Copy-Cloud',
+        live: 'https://copycloud.me',
+        images: []
+      },
+      {
+        no: '02',
+        name: 'TubeIQ',
+        category: 'YouTube Analytics Dashboard',
+        description: 'A single-page web dashboard for YouTube channel intelligence, designed to analyze channel metrics, engagement patterns, growth signals, and content performance insights.',
+        tech: ['HTML', 'CSS', 'JavaScript', 'Analytics'],
+        github: 'https://github.com/anshdeepofficial1/TubeIQ',
+        live: 'https://ytengine.vercel.app/',
+        images: []
+      },
+      {
+        no: '03',
+        name: 'Portfolio',
+        category: 'Personal Portfolio Website',
+        description: 'A personal portfolio website built to showcase skills, projects, education, contact information, and an interactive chatbot-style profile experience.',
+        tech: ['HTML', 'CSS', 'JavaScript', 'Portfolio'],
+        github: 'https://github.com/anshdeepofficial1/Portfolio',
+        live: 'https://anshdeepofficial1.vercel.app/',
+        images: []
+      },
+      {
+        no: '04',
+        name: 'darkanimewalls',
+        category: 'Wallpaper Brand Website',
+        description: 'A dark anime wallpaper brand website concept for browsing, presenting, and organizing premium anime-style wallpaper content for mobile and desktop users.',
+        tech: ['HTML', 'CSS', 'JavaScript', 'UI Design'],
+        github: 'https://github.com/anshdeepofficial1/darkanimewalls',
+        live: 'https://darkanimewalls.vercel.app/',
+        images: []
+      },
+      {
+        no: '05',
+        name: 'SnapStream',
+        category: 'Image Utility Web App',
+        description: 'A JavaScript utility app that helps users discover, filter, and download images from websites with a clean and creator-focused workflow.',
+        tech: ['JavaScript', 'Image Tools', 'Web App', 'Automation'],
+        github: 'https://github.com/anshdeepofficial1/SnapStream',
+        live: 'https://github.com/anshdeepofficial1/SnapStream',
+        images: []
+      },
+      {
+        no: '06',
+        name: 'FuelTracker',
+        category: 'Tracking Utility Project',
+        description: 'A fuel tracking project repository focused on recording, managing, and reviewing fuel-related data through a practical utility-style application interface.',
+        tech: ['JavaScript', 'Tracking App', 'Utility', 'Data'],
+        github: 'https://github.com/anshdeepofficial1/FuelTracker',
+        live: 'https://github.com/anshdeepofficial1/FuelTracker',
+        images: []
+      },
+      {
+        no: '07',
+        name: 'About Me',
+        category: 'Profile Website',
+        description: 'A simple personal profile repository designed to introduce identity, interests, skills, and basic developer information in a clean web format.',
+        tech: ['HTML', 'CSS', 'Personal Site', 'Profile'],
+        github: 'https://github.com/anshdeepofficial1/About-Me',
+        live: 'https://github.com/anshdeepofficial1/About-Me',
+        images: []
+      },
+      {
+        no: '08',
+        name: 'DEEPFAKE',
+        category: 'AI Media Repository',
+        description: 'An AI/media-focused repository exploring deepfake-related concepts, media processing, or research-oriented experimentation within a GitHub project workflow.',
+        tech: ['AI', 'Media', 'Research', 'Python'],
+        github: 'https://github.com/anshdeepofficial1/DEEPFAKE',
+        live: 'https://github.com/anshdeepofficial1/DEEPFAKE',
+        images: []
+      },
+      {
+        no: '09',
+        name: 'To-Do List',
+        category: 'Task Management App',
+        description: 'A task management application for creating, organizing, and managing daily tasks, built as a practical project to demonstrate app logic and user interaction.',
+        tech: ['Python', 'Tkinter', 'Task App', 'File I/O'],
+        github: 'https://github.com/anshdeepofficial1/To-Do-List',
+        live: 'https://github.com/anshdeepofficial1/To-Do-List',
+        images: []
+      },
+      {
+        no: '10',
+        name: 'Task Management Website',
+        category: 'Productivity Website',
+        description: 'A web-based task management project for organizing work, creating task lists, and practicing modern HTML, CSS, and JavaScript interface development.',
+        tech: ['HTML', 'CSS', 'JavaScript', 'Productivity'],
+        github: 'https://github.com/anshdeepofficial1/Task-Management-Website',
+        live: 'https://github.com/anshdeepofficial1/Task-Management-Website',
+        images: []
+      },
+      {
+        no: '11',
+        name: 'Employee Payroll Management System',
+        category: 'Database Management Project',
+        description: 'A payroll and employee management system project focused on employee records, salary handling, attendance-style data, and database-backed management workflows.',
+        tech: ['SQL', 'DBMS', 'Management System', 'Database'],
+        github: 'https://github.com/anshdeepofficial1/Employee-Payroll-Management-System',
+        live: 'https://github.com/anshdeepofficial1/Employee-Payroll-Management-System',
+        images: []
+      },
+      {
+        no: '12',
+        name: 'Airplane Management System',
+        category: 'C++ OOP Project',
+        description: 'A C++ console-based management system project demonstrating object-oriented programming concepts, structured logic, and practical system design fundamentals.',
+        tech: ['C++', 'OOP', 'Console App', 'Management System'],
+        github: 'https://github.com/anshdeepofficial1/Airplane-Management-System',
+        live: 'https://github.com/anshdeepofficial1/Airplane-Management-System',
+        images: []
+      },
+      {
+        no: '13',
+        name: 'Weather Data Analysis',
+        category: 'R Data Analysis Project',
+        description: 'A weather analytics repository using R for data processing, visualization, statistical analysis, and trend discovery across temperature and humidity data.',
+        tech: ['R', 'dplyr', 'ggplot2', 'Statistics'],
+        github: 'https://github.com/anshdeepofficial1/Weather-data-analysis',
+        live: 'https://github.com/anshdeepofficial1/Weather-data-analysis',
+        images: []
+      },
+      {
+        no: '14',
+        name: 'Snake Game',
+        category: 'Console Game Project',
+        description: 'A classic Snake Game project built to practice game loops, score tracking, movement control, collision logic, and console-based programming fundamentals.',
+        tech: ['C', 'Game Logic', 'Console Game', 'Programming'],
+        github: 'https://github.com/anshdeepofficial1/Snake-Game',
+        live: 'https://github.com/anshdeepofficial1/Snake-Game',
+        images: []
+      }
+    ];
+
+    const githubProjects = ["AniDash","VYBE","NOVA","ZYLO","Pitchcraft","iSide","ZMB","SocialBoost","AniDash-Website","darkanimewalls","Copy-Cloud","TubeIQ","DEEPFAKE","FuelTracker","SnapStream","Portfolio","To-Do-List","Employee-Payroll-Management-System","Airplane-Management-System","Weather-Data-Analysis","Snake-Game","Task-Management-Website","SocialBoost-APP"];
+
+    function svgIcon(paths, className = 'icon') {
+      return `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+    }
+
+    function runPortfolioDataTests() {
+      const errors = [];
+            if (skills.length !== 5) errors.push('Expected exactly 5 skill/service items.');
+      if (techStack.length !== 14) errors.push('Expected exactly 14 tech stack items.');
+      if (githubStats.length !== 6) errors.push('Expected exactly 6 GitHub/stat cards.');
+            if (!'anshdeep200618@gmail.com'.includes('@')) errors.push('Expected a valid email address.');
+      if (!RESUME_PDF_URL) errors.push('Expected a resume PDF URL placeholder or URL.');
+
+      projects.forEach((project) => {
+        if (!project.github.startsWith('https://github.com/anshdeepofficial1/')) {
+          errors.push(`${project.name} has an invalid GitHub URL.`);
+        }
+        
+      });
+
+      if (errors.length) console.warn('Portfolio data tests failed:', errors);
+    }
+
+    function renderMarquee() {
+      const row1 = techStack.slice(0, 7);
+      const row2 = techStack.slice(7);
+      const right = document.getElementById('marqueeRight');
+      const left = document.getElementById('marqueeLeft');
+      const stats = document.getElementById('githubStatsStrip');
+
+      const renderTech = (container, items) => {
+        container.innerHTML = items
+          .map((item) => `<div class="tech-marquee-card"><span>${item}</span></div>`)
+          .join('');
+      };
+
+      renderTech(right, row1);
+      renderTech(left, row2);
+
+      if (stats) {
+        stats.innerHTML = githubStats.map((stat, index) => `
+          <article class="github-stat-card fade-in" style="--fade-delay:${index * 80}ms;">
+            <span class="github-stat-value hero-heading">${stat.value}</span>
+            <h3 class="github-stat-title">${stat.label}</h3>
+            <p class="github-stat-desc">${stat.description}</p>
+          </article>
+        `).join('');
+      }
+    }
+
+    function renderSkills() {
+      const container = document.getElementById('skillsList');
+      container.innerHTML = skills.map((skill, index) => `
+        <article class="skill-item fade-in" style="--fade-delay:${index * 100}ms;">
+          <div><span class="skill-number">${skill.no}</span></div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              ${svgIcon(skill.icon)}
+              <h3 class="skill-title">${skill.title}</h3>
+            </div>
+            <p class="skill-desc">${skill.description}</p>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderProjects() {
+      const container = document.getElementById('projectsWrap');
+      const INITIAL = 6;
+      const expanded = container.dataset.expanded === 'true';
+      const ordered = projects.filter(p => p.name !== 'About Me'); const list = expanded ? ordered : ordered.slice(0, INITIAL);
+      const cards = list.map((project, index) => `
+        <div class="project-spacer" data-project-index="${index}">
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-title-box">
+                <span class="project-no hero-heading">${String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <p class="project-category">${project.category}</p>
+                  <h3 class="project-name">${project.name}</h3>
+                </div>
+              </div>
+              </div><p class="project-desc">${project.description}</p><div class="project-tags">${project.tech.map(tag => `<span class="project-tag">${tag}</span>`).join('')}</div><div class="project-actions">${project.live !== project.github ? `<a class="ghost-btn" href="${project.live}" target="_blank" rel="noopener">Visit website ↗</a>` : ''}${project.webapp ? `<a class="ghost-btn" href="${project.webapp}" target="_blank" rel="noopener">Open web app ↗</a>` : ''}<a class="ghost-btn" href="${project.github}" target="_blank" rel="noopener">Source code ↗</a></div>
+          </article>
+        </div>
+      `).join('');
+      const remaining = ordered.length - INITIAL;
+      const toggleBtn = ordered.length > INITIAL
+        ? `<div class="project-toggle">
+             <button id="projectsToggleBtn" type="button" class="ghost-btn" style="cursor:pointer;font-family:inherit;">
+               ${expanded ? 'Show less' : `Show all projects (${remaining} more)`}
+             </button>
+           </div>`
+        : '';
+      container.innerHTML = cards + toggleBtn;
+      const btn = document.getElementById('projectsToggleBtn');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          container.dataset.expanded = expanded ? 'false' : 'true';
+          renderProjects();
+          if (expanded) {
+            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
+    }
+
+    function renderRepos() {
+      const container = document.getElementById('repoCloud');
+      container.innerHTML = githubProjects.map(repo => `
+        <a class="repo-chip" href="https://github.com/anshdeepofficial1/${repo}" target="_blank" rel="noreferrer">${repo}</a>
+      `).join('');
+    }
+
+    function setupFadeIn() {
+      const items = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '50px' });
+
+      items.forEach(item => observer.observe(item));
+    }
+
+    function setupMagnet() {
+      const magnets = document.querySelectorAll('.magnet');
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+
+      window.addEventListener('mousemove', (event) => {
+        magnets.forEach((element) => {
+          const rect = element.getBoundingClientRect();
+          const padding = Number(element.dataset.padding || 150);
+          const strength = Number(element.dataset.strength || 3);
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const insideX = event.clientX > rect.left - padding && event.clientX < rect.right + padding;
+          const insideY = event.clientY > rect.top - padding && event.clientY < rect.bottom + padding;
+
+          if (insideX && insideY) {
+            const x = (event.clientX - centerX) / strength;
+            const y = (event.clientY - centerY) / strength;
+            element.style.transition = 'transform 0.3s ease-out';
+            element.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+          } else {
+            element.style.transition = 'transform 0.6s ease-in-out';
+            element.style.transform = 'translate(-50%, -50%)';
+          }
+        });
+      }, { passive: true });
+    }
+
+    function setupMarqueeScroll() {
+      const section = document.querySelector('.marquee-section');
+      const right = document.querySelector('.marquee-right');
+      const left = document.querySelector('.marquee-left');
+      if (!section || !right || !left) return;
+
+      const update = () => {
+        const sectionTop = section.offsetTop;
+        const offset = (window.scrollY - sectionTop + window.innerHeight) * 0.3;
+        right.style.transform = `translateX(${offset - 200}px)`;
+        left.style.transform = `translateX(${-(offset - 200)}px)`;
+      };
+
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    }
+
+    function setupAnimatedText() {
+      const text = 'Motivated BCA Data Science undergraduate skilled in front-end development, UI/UX design, SQL, JavaScript, and problem-solving. I build responsive user-friendly web applications, creative dashboards, and practical tools while improving through real GitHub projects and certifications.';
+      const element = document.getElementById('animatedAboutText');
+      if (!element) return;
+
+      element.innerHTML = text.split('').map((char, index) => {
+        const display = char === ' ' ? '&nbsp;' : char.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return `<span class="char" data-index="${index}">${display}</span>`;
+      }).join('');
+
+      const chars = Array.from(element.querySelectorAll('.char'));
+      const update = () => {
+        const rect = element.getBoundingClientRect();
+        const start = window.innerHeight * 0.8;
+        const end = window.innerHeight * 0.2;
+        const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+
+        chars.forEach((char, index) => {
+          const charStart = index / chars.length;
+          const charEnd = Math.min(charStart + 0.12, 1);
+          const local = Math.min(1, Math.max(0, (progress - charStart) / (charEnd - charStart)));
+          char.style.opacity = String(0.2 + local * 0.8);
+        });
+      };
+
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    }
+
+    function setupProjectStacking() {
+      const spacers = Array.from(document.querySelectorAll('.project-spacer'));
+      const cards = Array.from(document.querySelectorAll('.project-card'));
+      const total = cards.length;
+
+      const update = () => {
+        if (window.innerWidth <= 720) {
+          cards.forEach(card => card.style.transform = 'none');
+          return;
+        }
+
+        spacers.forEach((spacer, index) => {
+          const card = cards[index];
+          if (!card) return;
+          const rect = spacer.getBoundingClientRect();
+          const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / window.innerHeight));
+          const targetScale = Math.max(0.88, 1 - (total - 1 - index) * 0.006);
+          const scale = 1 - (1 - targetScale) * progress;
+          card.style.transform = `scale(${scale})`;
+        });
+      };
+
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    }
+
+
+
+    function setupResumeDownload() {
+      const button = document.getElementById('downloadResumeBtn');
+      if (!button) return;
+
+      button.href = RESUME_PDF_URL;
+      button.setAttribute('download', 'Anshdeep-Singh-Resume.pdf');
+    }
+
+    function setupContactModal() {
+      const modal = document.getElementById('contactModal');
+      if (!modal) return;
+
+      const triggers = document.querySelectorAll('[data-contact-trigger]');
+      const closeButtons = document.querySelectorAll('[data-close-contact]');
+      const openModal = (event) => {
+        event.preventDefault();
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('contact-modal-open');
+      };
+      const closeModal = () => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('contact-modal-open');
+      };
+
+      triggers.forEach((trigger) => trigger.addEventListener('click', openModal));
+      closeButtons.forEach((button) => button.addEventListener('click', closeModal));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+    }
+
+    function getChatbotReply(message) {
+      const text = message.toLowerCase().trim();
+
+      if (CHATBOT_GREETING_PATTERN.test(text)) {
+        return "Hello! I'm Anshdeep's portfolio assistant. Ask me about skills, projects, education, or contact details.";
+      }
+      if (text.includes('skill')) {
+        return 'Anshdeep works with HTML, CSS, JavaScript, TypeScript, Tailwind CSS, SQL, Python, UI/UX design, and video editing.';
+      }
+      if (text.includes('project')) {
+        return 'Featured projects include AniDash, VYBE, NOVA, ZYLO, Pitchcraft, and CopyCloud. You can explore them in the Projects section.';
+      }
+      if (text.includes('education')) {
+        return 'Anshdeep is pursuing BCA in Data Science (Hons. with Research) at Chandigarh University.';
+      }
+      if (text.includes('certification') || text.includes('certificate')) {
+        return 'Certifications include IBM, Coursera Responsive Web Design, and Design Thinking & Creativity for Innovation.';
+      }
+      if (text.includes('contact') || text.includes('email') || text.includes('phone')) {
+        return 'Contact: anshdeep200618@gmail.com | +91 97815 70098 | GitHub: anshdeepofficial1 | LinkedIn: anshdeepofficial1';
+      }
+      if (text.includes('github')) {
+        return 'GitHub: https://github.com/anshdeepofficial1';
+      }
+      if (text.includes('linkedin')) {
+        return 'LinkedIn: https://www.linkedin.com/in/anshdeepofficial1/';
+      }
+      if (text.includes('bye')) {
+        return 'Goodbye! Feel free to open chat again anytime.';
+      }
+      if (text.includes('thanks') || text.includes('thank you')) {
+        return "You're welcome! Feel free to ask anytime.";
+      }
+      return "I can help with: skills, projects, education, certifications, and contact details. Try one of those.";
+    }
+
+    function setupWebsiteChatbot() {
+      const panel = document.getElementById('chatbotPanel');
+      const toggle = document.getElementById('chatbotToggle');
+      const close = document.getElementById('chatbotClose');
+      const messages = document.getElementById('chatbotMessages');
+      const form = document.getElementById('chatbotForm');
+      const input = document.getElementById('chatbotInput');
+      const chipButtons = document.querySelectorAll('[data-chat-chip]');
+      const openLinks = document.querySelectorAll('[data-chat-open]');
+      if (!panel || !toggle || !close || !messages || !form || !input) {
+        const missingSelectors = [
+          ['#chatbotPanel', panel],
+          ['#chatbotToggle', toggle],
+          ['#chatbotClose', close],
+          ['#chatbotMessages', messages],
+          ['#chatbotForm', form],
+          ['#chatbotInput', input]
+        ]
+          .filter(([, element]) => !element)
+          .map(([selector]) => selector)
+          .join(', ');
+        console.warn(`Chatbot setup skipped: missing required elements ${missingSelectors}.`);
+        return;
+      }
+
+      const addMessage = (role, text) => {
+        const line = document.createElement('div');
+        line.className = `chat-line ${role}`;
+        line.textContent = text;
+        messages.appendChild(line);
+        messages.scrollTop = messages.scrollHeight;
+      };
+
+      const open = (event) => {
+        if (event) event.preventDefault();
+        panel.classList.add('active');
+        panel.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        if (!messages.children.length) {
+          addMessage('bot', CHATBOT_WELCOME_MESSAGE);
+        }
+        input.focus();
+      };
+
+      const closePanel = () => {
+        panel.classList.remove('active');
+        panel.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+      };
+
+      const handlePrompt = (text) => {
+        const clean = text.trim();
+        if (!clean) return;
+        addMessage('user', clean);
+        addMessage('bot', getChatbotReply(clean));
+      };
+
+      toggle.addEventListener('click', () => {
+        if (panel.classList.contains('active')) {
+          closePanel();
+          return;
+        }
+        open();
+      });
+
+      close.addEventListener('click', closePanel);
+      openLinks.forEach((link) => link.addEventListener('click', open));
+      chipButtons.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          open();
+          handlePrompt(chip.dataset.chatChip || '');
+        });
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        handlePrompt(input.value);
+        input.value = '';
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && panel.classList.contains('active')) closePanel();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      runPortfolioDataTests();
+      renderMarquee();
+      renderSkills();
+      renderProjects();
+      renderRepos();
+      setupResumeDownload();
+      setupContactModal();
+      
+      
+      
+      
+      
+      setupWebsiteChatbot();
+    });
+  </script>
 </body>
 </html>
