@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about' },
 };
 
-// Numbers only. Digital Revo lives in the intro and the experience list, where it reads as a role, not a stat.
 // Same giant index as the home stats. [number, unit, label, sub]; a null unit is the time zone, which never counts up
 const FACTS: [number,string|null,string,string|null][]=[[5,'','Featured projects','Apps, web and systems'],[4,'','Project categories',null],[2027,'','Expected graduation','Chandigarh University'],[5.5,null,'Based in Punjab, India','working worldwide']];
 const RULES=[['Understand the problem','I start with what the app or website needs to do and how people will actually use it.'],['Build a real prototype','I turn the idea into a working interface, not just a design mock-up.'],['Test and improve','I check real devices, responsive layouts, errors and user flows, then improve the experience.'],['Keep learning','I use feedback, open-source tools and practical experiments to make the next version better.']];
@@ -22,7 +21,7 @@ const TP = ['HTML','CSS','JavaScript','TypeScript','Tailwind CSS','React','Flutt
 const Ext = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a className="lnk mono" href={href} target="_blank" rel="noopener" data-cursor="link">{children}<Arrow /></a>
 );
-const XP: [React.ReactNode,string,React.ReactNode,React.ReactNode][] = [['2024 – 2027','BCA (Hons. with Research)','Data Science · Chandigarh University',<Ext href="/resume">Résumé</Ext>],['2026','Web Development Intern','AniWebDesigns Pvt. Ltd. · Mohali',null],['Ongoing','Independent developer','Apps, websites and software projects',<Ext href="https://github.com/anshdeepofficial1">GitHub</Ext>]];
+const XP: [React.ReactNode,string,React.ReactNode,React.ReactNode][] = [['2024 – 2027','BCA (Hons. with Research)','Data Science · Chandigarh University',<Ext href="/resume/coding">Résumé</Ext>],['2026','Web Development Intern','AniWebDesigns Pvt. Ltd. · Mohali',null],['Ongoing','Independent developer','Apps, websites and software projects',<Ext href="https://github.com/anshdeepofficial1">GitHub</Ext>]];
 const tags = (L: string[]) => <div className="tags">{L.map((t) => <span className="tag" key={t}>{t}</span>)}</div>;
 
 export default function AboutPage() {

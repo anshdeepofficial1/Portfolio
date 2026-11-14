@@ -12,7 +12,7 @@ const EXPLORE = [{ label: 'Coding', href: '/coding' }, {label:'Editing',href:'/e
 /** The same finale on every page. Letters of the email swell in width and weight near the pointer. */
 export function ContactFooter({ label = 'Contact' }: { label?: string }) {
   const path = usePathname();
-  const editing=path.startsWith('/editing');const email=editing?EDIT_EMAIL:EMAIL;const explore=editing?[{label:'Coding',href:'/coding'},{label:'Editing',href:'/editing'},{label:'Selected work',href:'/editing#work'},{label:'Experience',href:'/editing#experience'},{label:'Resume',href:'/resume'}]:EXPLORE;
+  const editing=path.startsWith('/editing');const email=editing?EDIT_EMAIL:EMAIL;const explore=editing?[{label:'Coding',href:'/coding'},{label:'Editing',href:'/editing'},{label:'Selected work',href:'/editing#work'},{label:'Experience',href:'/editing#experience'},{label:'Resume',href:'/editing/resume'}]:EXPLORE;
   const mail = useRef<HTMLAnchorElement>(null);
   const foot = useRef<HTMLElement>(null);
   const gx = useRef({ to: 0.5, at: 0.5 });
@@ -91,7 +91,7 @@ export function ContactFooter({ label = 'Contact' }: { label?: string }) {
         </Link>
       </div>
       <div className="ct-bot wrap">
-        <p className="mono mute">© 2026 Anshdeep Singh · Motion source: Denny Pratama (MIT)</p>
+        <p className="mono mute">© 2026 Anshdeep Singh. All personal content and branding reserved.</p>
         <a className="mono ct-up" href="#top" data-cursor="link">
           Back to top
           <Up />
