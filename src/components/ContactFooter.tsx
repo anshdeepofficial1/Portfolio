@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
-import { AVAILABILITY, EMAIL, NAV, SOCIAL } from '@/lib/site';
+import { AVAILABILITY, EMAIL, NAV, SOCIAL, PHONE, TEL, WHATSAPP } from '@/lib/site';
 import { Arrow, Up } from './Icons';
 import { Clock } from './Clock';
 
-const EXPLORE = [{ label: 'Home', href: '/' }, ...NAV.filter((n) => n.key !== 'contact')];
+const EXPLORE = [{ label: 'Coding', href: '/' }, {label:'Editing',href:'/editing'}, ...NAV.filter((n) => n.key !== 'contact')];
 
 /** The same finale on every page. Letters of the email swell in width and weight near the pointer. */
 export function ContactFooter({ label = 'Contact' }: { label?: string }) {
@@ -81,7 +81,7 @@ export function ContactFooter({ label = 'Contact' }: { label?: string }) {
           <p className="mono mute">Contact</p>
           <ul>
             <li><a href={`mailto:${EMAIL}`} data-cursor="link">{EMAIL}</a></li>
-            <li className="ct-addr">Punjab, India<br />Working worldwide, GMT+5:30</li>
+            <li><a href={TEL}>{PHONE}</a></li><li><a href={WHATSAPP} target="_blank" rel="noopener">WhatsApp</a></li><li className="ct-addr">Punjab, India<br />Working worldwide, GMT+5:30</li>
           </ul>
         </div>
         <Link className="btn ct-btn" href={path === '/contact' ? '#top' : '/contact'} data-cursor="link">

@@ -7,7 +7,7 @@ import { Arrow } from '../Icons';
 import { Mark } from '../Mark';
 import { slashAt } from '@/lib/slash';
 
-const DLIST = [['d.1', 'UI/UX design'], ['d.2', 'Design systems'], ['d.3', 'Brand identity'], ['d.4', 'Prototyping'], ['d.5', 'Motion']];
+const DLIST = [['d.1', 'UI/UX design'], ['d.2', 'Design systems'], ['d.3', 'Video editing'], ['d.4', 'Prototyping'], ['d.5', 'Motion design']];
 const PLIST = [['p.1', 'React and JavaScript'], ['p.2', 'Flutter and Dart'], ['p.3', 'Python and SQL'], ['p.4', 'AI features'], ['p.5', 'Performance and launch']];
 
 // boxes measured on the 1440 × 900 home page of this site (scripts/shoot-home.mjs prints them when it reshoots the frame), as % of the frame: [left, top, width, height]
@@ -21,7 +21,7 @@ const box = ([l, t, w, h]: number[]) => ({ left: `${l}%`, top: `${t}%`, width: `
  * passing for a design file.
  */
 const HEAD_T = 'One project. Both sides of the line.';
-const LEAD_T = 'A project overview as a blueprint and as it ships. Scroll, and the live page sweeps in across the slash. Or move across the frame to scrub it. The blueprint illustrates the design-to-production workflow.';
+const LEAD_T = 'My actual portfolio homepage as a blueprint and as it ships. Scroll, and the live page sweeps in across the slash. Or move across the frame to scrub it. The blueprint is generated from the real homepage screenshot.';
 
 export function BothSides() {
   const bs = useRef<HTMLDivElement>(null);
@@ -47,10 +47,10 @@ export function BothSides() {
           <div className="bs-cap" aria-hidden="true"><p className="h-xl">{HEAD_T}</p><p className="lead">{LEAD_T}</p></div>
           <div className="bs" ref={bs} data-cursor="scrub" data-cl="Scrub" onPointerMove={scrub} role="img" aria-label="The home page of this site, half as a blueprint traced from it with its layout grid and half as the live site, split by a diagonal line">
             <div className="bs-prod">
-              <Image src="/img/work-portfolio.svg" alt="" fill sizes="(max-width: 1680px) 100vw, 1584px" />
+              <Image src="/img/actual/portfolio.jpg" alt="" fill sizes="(max-width: 1680px) 100vw, 1584px" />
             </div>
             <div className="bs-des">
-              <Image className="bs-draw" src="/img/draw-portfolio.svg" alt="" fill sizes="(max-width: 1680px) 100vw, 1584px" />
+              <Image className="bs-draw" src="/img/actual/portfolio-blueprint.jpg" alt="" fill sizes="(max-width: 1680px) 100vw, 1584px" />
               <div className="wf-cols" aria-hidden="true">{Array.from({ length: 12 }, (_, i) => <span key={i} />)}</div>
               <div className="wf-sel" style={box(HEAD)}><i /><i /><i /><i /><span className="wf-pill">Display · 356 × 72</span></div>
               <div className="wf-sel wf-sel-s" style={box(CTA)}><i /><i /><i /><i /></div>
@@ -60,7 +60,7 @@ export function BothSides() {
             <div className="bs-h"><Mark /></div>
           </div>
           <div className="bs-hud mono" aria-hidden="true">
-            <span>d · design<small>Blueprint · design study · 1440</small></span>
+            <span>d · design<small>Blueprint · traced from actual site</small></span>
             <span className="bs-bar"><i /></span>
             <span>p · production<small><i />Live · anshdeepofficial1.vercel.app</small></span>
           </div>

@@ -32,11 +32,11 @@ export default function WorkPage() {
         />
         <section className="wk on-bone" aria-labelledby="wk-h">
           <div className="wrap">
-            <SecHead n="01" label="Selected" id="wk-h" right="Live sites" />
+            <SecHead n="01" label="Selected" id="wk-h" right="Actual project previews" />
             {/* case 00 is the site itself; it sits above the filters because it is every category at once */}
             <article className="wkf grid">
               <Link className="wkf-s" href="/work/portfolio" data-cursor="view" aria-label="This site">
-                <BrowserShot img="/img/work-portfolio.svg" url="anshdeepofficial1.vercel.app" alt="The home page of this site" sizes="(max-width: 900px) 100vw, 66vw" drive="rise" />
+                <BrowserShot img="/img/actual/portfolio.jpg" url="anshdeepofficial1.vercel.app" alt="The home page of this site" sizes="(max-width: 900px) 100vw, 66vw" drive="rise" />
               </Link>
               <div className="wkf-t">
                 <p className="wkf-n mono"><span>00 / {total}</span><span>Case study</span></p>
@@ -53,14 +53,14 @@ export default function WorkPage() {
                 <Filtered k={w.fil} key={w.k}>
                   <article className="wkf grid">
                     <L className="wkf-s" href={w.href} {...ext} data-cursor="view" aria-label={w.name}>
-                      <BrowserShot img={w.img} url={urlFor(w)} video={w.video} alt={`${w.name} home page`} sizes="(max-width: 900px) 100vw, 66vw" drive="rise" />
+                      <BrowserShot img={w.img} url={urlFor(w)} video={w.video} alt={`${w.name} ${w.previewLabel}`} sizes="(max-width: 900px) 100vw, 66vw" drive="rise" />
                     </L>
                     <div className="wkf-t">
-                      <p className="wkf-n mono"><span>0{i + 1} / {total}</span><span>{w.cat}</span></p>
+                      <p className="wkf-n mono"><span>{String(i + 1).padStart(2,"0")} / {total}</span><span>{w.cat} · {w.previewLabel}</span></p>
                       <h2 className="wkf-h">{w.name}</h2>
                       <p className="lead">{w.desc}</p>
                       <div className="tags">{w.tags.map((t) => <span className="tag" key={t}>{t}</span>)}</div>
-                      <p><L className="lnk mono" href={w.href} {...ext} data-cursor="link">{w.go}<Arrow /></L></p>
+                      <p><L className="lnk mono" href={w.href} {...ext} data-cursor="link">{w.href.includes("github.com") ? "Repository" : "Open website"}<Arrow /></L>{w.github && w.github!==w.href && <a className="lnk mono" style={{marginLeft:20}} href={w.github} target="_blank" rel="noopener">GitHub<Arrow/></a>}</p>
                     </div>
                   </article>
                 </Filtered>
@@ -79,9 +79,9 @@ export default function WorkPage() {
               {MORE.map((w, i) => (
                 <Filtered k={w.fil} key={w.k}>
                   <article className="wkm-c">
-                    <BrowserShot img={w.img} url={urlFor(w)} alt={`${w.name} home page`} sizes="(max-width: 900px) 100vw, 50vw" drive="rise" />
+                    <BrowserShot img={w.img} url={urlFor(w)} alt={`${w.name} ${w.previewLabel}`} sizes="(max-width: 900px) 100vw, 50vw" drive="rise" />
                     <div className="wkm-r"><h3>{w.name}</h3><span className="mono mute">{String(i + CLIENT.length + 1).padStart(2,'0')} / {total}</span></div>
-                    <p className="mono">{w.cat}</p>
+                    <p className="mono">{w.cat} · {w.previewLabel}</p>
                     <p>{w.desc}</p><a className="lnk mono" href={w.href} target="_blank" rel="noopener">Open project<Arrow /></a>
                   </article>
                 </Filtered>

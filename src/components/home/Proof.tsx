@@ -1,6 +1,6 @@
 
 
-const STATS=[{to:11,suf:'',label:'Featured projects',sub:'Apps, web and systems',sr:'11 featured projects'},{to:4,suf:'',label:'Project categories',sub:'Apps · web · systems · creative',sr:'4 categories'},{to:2028,suf:'',label:'Expected graduation',sub:'Chandigarh University',sr:'Expected graduation 2028'}];
+const STATS=[{to:5,suf:'',label:'Featured projects',sub:'Apps, web and systems',sr:'5 featured projects'},{to:4,suf:'',label:'Project categories',sub:'Apps · web · systems · creative',sr:'4 categories'},{to:2027,suf:'',label:'Expected graduation',sub:'Chandigarh University',sr:'Expected graduation 2027'}];
 
 /** Testimonials and the stats index. The quotes run in Quotes; the count-up is scrubbed in ScrollFx. */
 export function Proof() {

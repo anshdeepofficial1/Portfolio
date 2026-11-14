@@ -96,7 +96,7 @@ export function CaseViewer() {
       <div className="lb-stage" onClick={(e) => e.target === e.currentTarget && close()}>
         {w && (
           <div className={`lb-f${w.scene ? ' is-cx' : ''}`} ref={frame} key={w.k}>
-            {w.scene ? <ConceptScene k={w.k} active={open} full /> : w.video ? <video poster={posterOf(w.img)} autoPlay muted loop playsInline aria-label={`${w.name}, scrolling through the live site`}>{videoSources(w.video)}</video> : <Image src={w.img} alt={`${w.name} homepage`} fill sizes="90vw" />}
+            {w.scene ? <ConceptScene k={w.k} active={open} full /> : w.video ? <video poster={posterOf(w.img)} autoPlay muted loop playsInline aria-label={`${w.name}, scrolling through the live site`}>{videoSources(w.video)}</video> : <Image src={w.img} alt={`${w.name} ${w.previewLabel || 'preview'}`} fill sizes="90vw" />}
           </div>
         )}
       </div>
@@ -104,7 +104,7 @@ export function CaseViewer() {
         <p><button type="button" onClick={() => go(-1)} data-cursor="link">Prev</button> <span className="mute">/</span> <button type="button" onClick={() => go(1)} data-cursor="link">Next</button></p>
         {w && (w.concept
           ? <p className="lb-hint">{SCENES[w.k]?.hint}</p>
-          : <a className={w.ext ? 'btn btn-line btn-s' : 'lnk'} href={w.href} target={w.ext ? '_blank' : undefined} rel={w.ext ? 'noopener' : undefined} data-cursor="link">{w.ext ? 'Open live site' : w.go}<Arrow /></a>)}
+          : <a className={w.ext ? 'btn btn-line btn-s' : 'lnk'} href={w.href} target={w.ext ? '_blank' : undefined} rel={w.ext ? 'noopener' : undefined} data-cursor="link">{w.ext ? w.href.includes('github.com') ? 'Open repository' : 'Open live site' : w.go}<Arrow /></a>)}
       </div>
     </div>
   );

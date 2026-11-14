@@ -9,7 +9,7 @@ import { Arrow } from './Icons';
 import { Mark } from './Mark';
 import { useSite } from './Site';
 
-export const sectionOf = (path: string) => (path.startsWith('/work') ? 'work' : path.startsWith('/blog') ? 'blog' : path.startsWith('/about') ? 'about' : path.startsWith('/thanks') || path.startsWith('/contact') ? 'contact' : '');
+export const sectionOf = (path: string) => (path.startsWith('/work') ? 'work' : path.startsWith('/resume') ? 'resume' : path.startsWith('/editing') ? 'editing' : path.startsWith('/about') ? 'about' : path.startsWith('/thanks') || path.startsWith('/contact') ? 'contact' : '');
 
 export function Nav() {
   const path = usePathname();
@@ -40,7 +40,7 @@ export function Nav() {
         <Link className="brand" href={path === '/' ? '#top' : '/'} aria-label="Anshdeep Singh, home" data-cursor="link">
           <Mark />
         </Link>
-        <nav className="nav-links" aria-label="Primary">
+        <div className="variant-switch" aria-label="Portfolio variant"><Link href="/" aria-current={!path.startsWith('/editing')?'page':undefined}>Coding</Link><Link href="/editing" aria-current={path.startsWith('/editing')?'page':undefined}>Editing</Link></div><nav className="nav-links" aria-label="Primary">
           {NAV.map((n) => (
             <Link key={n.key} className={`nl${cur === n.key ? ' on' : ''}`} href={n.href} data-cursor="link" aria-current={cur === n.key ? 'page' : undefined}>
               <span className="roll" data-t={n.label}>

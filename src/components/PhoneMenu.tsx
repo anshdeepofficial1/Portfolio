@@ -13,7 +13,8 @@ import { useSite } from './Site';
 import { lenis } from './SmoothScroll';
 
 const ITEMS = [
-  { key: 'home', label: 'Home', href: '/' },
+  { key: 'home', label: 'Coding', href: '/' },
+  { key: 'editing', label: 'Editing', href: '/editing' },
   { key: 'work', label: 'Work', href: '/work' },
   { key: 'about', label: 'About', href: '/about' },
   { key: 'resume', label: 'Resume', href: '/resume' },

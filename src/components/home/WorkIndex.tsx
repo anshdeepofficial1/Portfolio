@@ -153,7 +153,7 @@ export function WorkIndex() {
       <div className="wrap">
         <div className="work-top grid">
           <h2 className="h-xl gc-1-8" id="work-h">Drawn, then shipped.</h2>
-          <p className="lead gc-9-12">A selection of my apps, websites and tools. Point at a name to see the project.</p>
+          <p className="lead gc-9-12">My five main projects. Hover or tap a name for its real preview.</p>
         </div>
       </div>
       <ul className="idx">
@@ -165,7 +165,7 @@ export function WorkIndex() {
               {w.scene
                 ? <span className="sm r-pv" aria-hidden="true">{mode === 'touch' ? <ConceptScene k={w.k} active="auto" /> : <ConceptPoster k={w.k} />}</span>
                 : <ShotMedia className="r-pv" img={w.img} video={w.video} sizes="(max-width: 900px) 100vw, 60vw" />}
-              <span className="r-meta"><span className="mono">{w.cat}</span><span className="r-d">{w.short}</span><span className="r-go mono">{w.concept ? w.go : 'Open the preview'}<Arrow /></span></span>
+              <span className="r-meta"><span className="mono">{w.cat} · {w.previewLabel}</span><span className="r-d">{w.short}</span><span className="r-go mono">{w.concept ? w.go : 'Open the preview'}<Arrow /></span></span>
             </>
           );
           return (
@@ -176,7 +176,7 @@ export function WorkIndex() {
         })}
       </ul>
       <div className="work-all">
-        <p className="mono">11 projects on the work page</p>
+        <p className="mono">21 projects on the work page</p>
         <Link className="lnk mono" href="/work" data-cursor="link">See all work<Arrow /></Link>
       </div>
       <div className="pv" ref={pv} aria-hidden="true">
