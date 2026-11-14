@@ -19,6 +19,7 @@ export const NAV = [
 export const PHONE='+91 97815 70098';
 export const TEL='tel:+919781570098';
 export const WHATSAPP='https://wa.me/919781570098';
-export const EDIT_EMAIL='anshdeep200618@gmail.com';
+export const EDIT_EMAIL=EMAIL;
+export const EDIT_LINKEDIN='https://www.linkedin.com/in/anshdeep-singh-editor/';
 export const GMAIL='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(EMAIL);
 export const OUTLOOK='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(EMAIL);

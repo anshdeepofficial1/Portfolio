@@ -1,6 +1,7 @@
+import {ALL_WORK,CLIENT,FILTERS} from '@/lib/work';
 
 
-const STATS=[{to:5,suf:'',label:'Featured projects',sub:'Apps, web and systems',sr:'5 featured projects'},{to:4,suf:'',label:'Project categories',sub:'Apps · web · systems · creative',sr:'4 categories'},{to:2027,suf:'',label:'Expected graduation',sub:'Chandigarh University',sr:'Expected graduation 2027'}];
+const STATS=[{to:ALL_WORK.length,suf:'',label:'Public repositories',sub:`${CLIENT.length} featured projects`,sr:`${ALL_WORK.length} public repositories`},{to:FILTERS.length-1,suf:'',label:'Project categories',sub:'Apps · web · systems · creative',sr:`${FILTERS.length-1} categories`},{to:2027,suf:'',label:'Expected graduation',sub:'Chandigarh University',sr:'Expected graduation 2027'}];
 
 /** Testimonials and the stats index. The quotes run in Quotes; the count-up is scrubbed in ScrollFx. */
 export function Proof() {

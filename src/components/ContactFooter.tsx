@@ -6,6 +6,7 @@ import { useEffect, useRef } from 'react';
 import { AVAILABILITY, EMAIL, NAV, SOCIAL, PHONE, TEL, WHATSAPP, EDIT_EMAIL } from '@/lib/site';
 import { Arrow, Up } from './Icons';
 import { Clock } from './Clock';
+import { Social } from './Social';
 
 const EXPLORE = [{ label: 'Coding', href: '/coding' }, {label:'Editing',href:'/editing'}, ...NAV.filter((n) => n.key !== 'contact')];
 
@@ -74,15 +75,13 @@ export function ContactFooter({ label = 'Contact' }: { label?: string }) {
         </nav>
         <div className="ct-col">
           <p className="mono mute">Connect</p>
-          <ul>
-            {SOCIAL.filter(s=>!editing||s.name!=='GitHub').map((s) => <li key={s.name}><a href={s.href} target="_blank" rel="noopener" data-cursor="link">{s.name}</a></li>)}
-          </ul>
+          <Social editing={editing}/>
         </div>
         <div className="ct-col">
           <p className="mono mute">Contact</p>
           <ul>
             <li><a href={`mailto:${email}`} data-cursor="link">{email}</a></li>
-            <li><a href={TEL}>{PHONE}</a></li><li><a href={WHATSAPP} target="_blank" rel="noopener">WhatsApp</a></li><li className="ct-addr">Punjab, India<br />Working worldwide, GMT+5:30</li>
+            <li><a href={TEL}>{PHONE}</a></li><li className="ct-addr">Punjab, India<br />Working worldwide, GMT+5:30</li>
           </ul>
         </div>
         <Link className="btn ct-btn" href={editing?'mailto:'+email:path === '/contact' ? '#top' : '/contact'} data-cursor="link">

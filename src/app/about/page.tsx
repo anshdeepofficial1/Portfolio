@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Fragment } from 'react';
+import {ALL_WORK,FILTERS} from '@/lib/work';
 import { SecHead } from '@/components/PageParts';
 import { Mark } from '@/components/Mark';
 import { ContactFooter } from '@/components/ContactFooter';
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 // Same giant index as the home stats. [number, unit, label, sub]; a null unit is the time zone, which never counts up
-const FACTS: [number,string|null,string,string|null][]=[[5,'','Featured projects','Apps, web and systems'],[4,'','Project categories',null],[2027,'','Expected graduation','Chandigarh University'],[5.5,null,'Based in Punjab, India','working worldwide']];
+const FACTS: [number,string|null,string,string|null][]=[[ALL_WORK.length,'','Public repositories','Apps, web and systems'],[FILTERS.length-1,'','Project categories',null],[2027,'','Expected graduation','Chandigarh University'],[5.5,null,'Based in Punjab, India','working worldwide']];
 const RULES=[['Understand the problem','I start with what the app or website needs to do and how people will actually use it.'],['Build a real prototype','I turn the idea into a working interface, not just a design mock-up.'],['Test and improve','I check real devices, responsive layouts, errors and user flows, then improve the experience.'],['Keep learning','I use feedback, open-source tools and practical experiments to make the next version better.']];
 const STEPS=[['ps-d','d','Research','Understand the use case and choose an appropriate stack.'],['ps-d','d','Design','Plan the interface, navigation, layout and responsive behaviour.'],['ps-p','p','Develop','Build the working application, connect the necessary services and test features.'],['ps-x ps-p','p','Ship','Deploy, verify real functionality and iterate on feedback.']];
 const TD = ['UI/UX','Prototyping','Responsive design','Motion design'];

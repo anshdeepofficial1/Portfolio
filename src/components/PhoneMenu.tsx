@@ -80,7 +80,7 @@ export function PhoneMenu() {
           Get in touch
           <Arrow />
         </Link>
-        {!editing&&<Social/>}
+        <Social editing={editing}/>
         <p className="mono mute">Punjab, India · <Clock /> GMT+5:30</p>
       </div>
     </div>

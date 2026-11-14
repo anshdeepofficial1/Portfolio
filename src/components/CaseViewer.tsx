@@ -78,8 +78,9 @@ export function CaseViewer() {
   }, [i]);
 
   const w = i === null ? null : WORK[i];
+  if (!open || !w) return null;
   return (
-    <div ref={root} className={`lb${open ? ' on' : ''}`} inert={!open} role="dialog" aria-modal="true" aria-label={w ? `${w.name} preview` : 'Project preview'} aria-hidden={!open}>
+    <div ref={root} className="lb on" inert={!open} role="dialog" aria-modal="true" aria-label={w ? `${w.name} preview` : 'Project preview'} aria-hidden={!open}>
       <div className="lb-top">
         <p><b>{w?.name}</b></p>
         <button className="preview-close" type="button" ref={closeBtn} onClick={close} aria-label="Close preview" data-cursor="link"><Close/></button>

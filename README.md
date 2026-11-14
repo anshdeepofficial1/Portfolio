@@ -32,12 +32,32 @@ I build applications, websites and software tools, and create visual stories thr
 | **CopyCloud** | Cross-device file and text transfer | [Website](https://copycloud.me/) |
 | **SocialBoost** | Creator analytics and social tools | [Website](https://socialboostweb.vercel.app/) |
 
-[Explore all 24 projects →](https://anshdeepofficial1.vercel.app/work)
+[Explore all 17 public repositories →](https://anshdeepofficial1.vercel.app/work)
+
+## All repositories
+
+- [**AniDash**](https://github.com/anshdeepofficial1/AniDash) — Android anime companion
+- [**VYBE**](https://github.com/anshdeepofficial1/VYBE) — Android music player
+- [**ZYLO**](https://github.com/anshdeepofficial1/ZYLO) — Android media hub
+- [**CopyCloud**](https://github.com/anshdeepofficial1/Copy-Cloud) — Cross-device transfer
+- [**SocialBoost**](https://github.com/anshdeepofficial1/SocialBoost) — Creator analytics studio
+- [**NOVA OS**](https://github.com/anshdeepofficial1/NOVA) — Experimental operating system
+- [**Pitchcraft**](https://github.com/anshdeepofficial1/Pitchcraft) — Local Android gallery
+- [**ZMB**](https://github.com/anshdeepofficial1/ZMB) — Interactive animation automation
+- [**DarkAnimeWalls**](https://github.com/anshdeepofficial1/darkanimewalls) — Wallpaper gallery
+- [**TubeIQ**](https://github.com/anshdeepofficial1/TubeIQ) — YouTube channel intelligence
+- [**SnapStream**](https://github.com/anshdeepofficial1/SnapStream) — Browser extension
+- [**FuelTrack**](https://github.com/anshdeepofficial1/FuelTracker) — Trip-cost intelligence
+- [**DeepGuard**](https://github.com/anshdeepofficial1/DEEPFAKE) — Media forensics research
+- [**AniDash Website**](https://github.com/anshdeepofficial1/AniDash-Website) — Responsive anime web app
+- [**SocialBoost Android**](https://github.com/anshdeepofficial1/SocialBoost-APP) — Native creator studio client
+- [**Portfolio**](https://github.com/anshdeepofficial1/Portfolio) — Personal website
+- [**GitHub Profile**](https://github.com/anshdeepofficial1/anshdeepofficial1) — Developer profile and dashboard
 
 ## Skills & education
 
 - **Coding:** React, Next.js, TypeScript, Flutter, Dart, Python, SQL and Rust.
-- **Editing:** video editing, lyrical videos, reels, motion design, graphics and typography.
+- **Editing:** 7+ years of hands-on practice since 2019; lyrical videos, reels, motion graphics, thumbnails, posters and visual storytelling. Premiere Pro, Photoshop and Media Encoder (intermediate); DaVinci Resolve (beginner).
 - **Education:** BCA (Hons. with Research), Data Science — Chandigarh University.
 
 ## Resumes
@@ -55,8 +75,7 @@ I build applications, websites and software tools, and create visual stories thr
 
 ## Contact
 
-**Coding:** [anshdeepofficial1@gmail.com](mailto:anshdeepofficial1@gmail.com)  
-**Editing:** [anshdeep200618@gmail.com](mailto:anshdeep200618@gmail.com)  
+**Email:** [anshdeepofficial1@gmail.com](mailto:anshdeepofficial1@gmail.com)  
 **Location:** Punjab, India
 
 [Contact page](https://anshdeepofficial1.vercel.app/contact) · [GitHub](https://github.com/anshdeepofficial1) · [LinkedIn](https://www.linkedin.com/in/anshdeepofficial1/) · [Instagram](https://www.instagram.com/anshdeepofficial1/)
