@@ -2,10 +2,7 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://anshdeepoff
 export const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'anshdeepofficial1@gmail.com';
 export const AVAILABILITY = 'Open to projects and collaboration';
 
-// The mark: two halves of eleven points, one a 180° turn of the other around the pivot.
-export const D_PATH = 'M0 -500L-155 -420L-330 -65L-330 175L-222 250L-100 190L-100 82L-200 118L-235 70L-100 -210L0 -255Z';
-export const P_PATH = 'M0 500L155 420L330 65L330 -175L222 -250L100 -190L100 -82L200 -118L235 -70L100 210L0 255Z';
-export const MARK_VB = '-346 -512 692 1024';
+export { AS_PATHS, AS_VIEWBOX } from './brand';
 
 export const SOCIAL = [{name:'GitHub',href:'https://github.com/anshdeepofficial1'},{name:'LinkedIn',href:'https://www.linkedin.com/in/anshdeepofficial1/'},{name:'Instagram',href:'https://www.instagram.com/anshdeepofficial1/'}];
 

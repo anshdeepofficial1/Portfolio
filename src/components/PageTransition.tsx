@@ -8,7 +8,8 @@ import { NAV } from '@/lib/site';
 import { SLASH } from '@/lib/slash';
 
 const labelFor = (path: string) => {
-  if (path === '/') return 'Home';
+  if (path === '/') return 'Coding';
+  if (path.startsWith('/editing')) return 'Editing';
   const top = NAV.find((n) => path === n.href || path.startsWith(`${n.href}/`));
   return top ? top.label : '';
 };

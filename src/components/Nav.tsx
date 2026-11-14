@@ -38,9 +38,9 @@ export function Nav() {
     <header className="nav">
       <div className="nav-in">
         <Link className="brand" href={path === '/' ? '#top' : '/'} aria-label="Anshdeep Singh, home" data-cursor="link">
-          <Mark />
+          <Mark /><span className="brand-word">Anshdeep Singh</span>
         </Link>
-        <div className="variant-switch" aria-label="Portfolio variant"><Link href="/" aria-current={!path.startsWith('/editing')?'page':undefined}>Coding</Link><Link href="/editing" aria-current={path.startsWith('/editing')?'page':undefined}>Editing</Link></div><nav className="nav-links" aria-label="Primary">
+        <nav className="nav-links" aria-label="Primary">
           {NAV.map((n) => (
             <Link key={n.key} className={`nl${cur === n.key ? ' on' : ''}`} href={n.href} data-cursor="link" aria-current={cur === n.key ? 'page' : undefined}>
               <span className="roll" data-t={n.label}>
@@ -48,6 +48,7 @@ export function Nav() {
               </span>
             </Link>
           ))}
+          <Link className="nl variant-nav" href={path.startsWith('/editing')?'/':'/editing'} data-cursor="link"><span className="roll" data-t={path.startsWith('/editing')?'Coding':'Editing'}><span>{path.startsWith('/editing')?'Coding':'Editing'}</span></span></Link>
         </nav>
         <Link className="nav-cta" href="/contact" data-cursor="link">
           Get in touch
