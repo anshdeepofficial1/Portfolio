@@ -1,0 +1,2 @@
+import { SITE_URL, EMAIL, SOCIAL } from './site';
+export const JSON_LD=JSON.stringify({'@context':'https://schema.org','@type':'Person',name:'Anshdeep Singh',url:SITE_URL,email:EMAIL,jobTitle:'Developer and interface designer',sameAs:SOCIAL.map(s=>s.href)});
