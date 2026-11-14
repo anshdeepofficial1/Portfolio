@@ -1,1 +1,88 @@
-{}
+{
+  "vybe": {
+    "label": "App screenshot",
+    "source": "https://raw.githubusercontent.com/anshdeepofficial1/VYBE/HEAD/docs/screenshots/vybe-home.png"
+  },
+  "copycloud": {
+    "label": "Website screenshot",
+    "source": "https://raw.githubusercontent.com/anshdeepofficial1/Copy-Cloud/HEAD/Screenshots/Send.png"
+  },
+  "anidash": {
+    "label": "App screenshot",
+    "source": "https://raw.githubusercontent.com/anshdeepofficial1/AniDash/HEAD/screenshots/desktop/home.jpg"
+  },
+  "nova": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/NOVA"
+  },
+  "iside": {
+    "label": "Preview unavailable",
+    "source": "https://github.com/anshdeepofficial1/iSide",
+    "unavailable": true
+  },
+  "zylo": {
+    "label": "Website screenshot",
+    "source": "https://zylod.vercel.app/"
+  },
+  "zmb": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/ZMB"
+  },
+  "pitchcraft": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/Pitchcraft"
+  },
+  "darkanimewalls": {
+    "label": "Website screenshot",
+    "source": "https://darkanimewalls.vercel.app/"
+  },
+  "tubeiq": {
+    "label": "Website screenshot",
+    "source": "https://ytengine.vercel.app/"
+  },
+  "snapstream": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/SnapStream"
+  },
+  "socialboost": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/SocialBoost"
+  },
+  "aboutme": {
+    "label": "Preview unavailable",
+    "source": "https://github.com/anshdeepofficial1/About-Me",
+    "unavailable": true
+  },
+  "todo": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/To-Do-List"
+  },
+  "fueltracker": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/FuelTracker"
+  },
+  "deepfake": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/DEEPFAKE"
+  },
+  "payroll": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/Employee-Payroll-Management-System"
+  },
+  "taskmanagement": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/Task-Management-Website"
+  },
+  "weather": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/Weather-data-analysis"
+  },
+  "airplane": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/Airplane-Management-System"
+  },
+  "snake": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/Snake-Game"
+  }
+}
