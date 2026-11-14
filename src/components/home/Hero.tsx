@@ -9,7 +9,7 @@ import { Clock } from '../Clock';
 import { useRootFlag } from '../Site';
 import { lenis } from '../SmoothScroll';
 import { compileProgram } from '@/lib/webgl';
-import { CHAPTERS } from './chapters';
+import { CHAPTERS, EDIT_CHAPTERS } from './chapters';
 import { Mark } from '../Mark';
 
 
@@ -53,7 +53,8 @@ function camera(p: number, yaw: number, pitch: number, aspect: number) {
   };
 }
 
-export function Hero() {
+export function Hero({editing=false}:{editing?:boolean}={}) {
+  const chapters=editing?EDIT_CHAPTERS:CHAPTERS;
   const wrapRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
   const cvRef = useRef<HTMLCanvasElement>(null);
@@ -154,7 +155,7 @@ export function Hero() {
     };
 
     // Render below native resolution and step quality down when frames run long.
-    let q = 0.62;
+    let q = 0.95;
     let slow = 0;
     let last = 0;
     let first = true;
@@ -162,7 +163,7 @@ export function Hero() {
     let severe = 0;
     let dead = false;
     const size = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 1.5) * q;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.75) * q;
       const w = Math.max(2, Math.round(cv.clientWidth * dpr));
       const h = Math.max(2, Math.round(cv.clientHeight * dpr));
       if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
@@ -250,7 +251,7 @@ export function Hero() {
       gl.uniform1f(u.uEnd, c.end);
       gl.uniform3f(u.uKey, -0.6 + m.x * 0.7, 0.7 + m.y * 0.45, 0.8);
       gl.uniform3f(u.uAccent, 0.08, 0.34, 1.0);
-      gl.uniform1f(u.uSteps, 150);
+      gl.uniform1f(u.uSteps, 175);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       if (first) { first = false; setOn(true); }
       // judge after 60 frames or 1.5s, whichever comes first: on a device drawing a frame a second, 60 frames is a minute
@@ -262,7 +263,7 @@ export function Hero() {
         slow = slow * 0.95 + (dt > 34 ? 1 : 0) * 0.05;
         if (slow > 0.6) {
           slow = 0;
-          if (q > 0.42) { q = Math.max(0.42, q - 0.1); size(); }
+          if (q > 0.65) { q = Math.max(0.65, q - 0.1); size(); }
           else if (!force) giveUp('too slow at lowest quality'); // still too slow at the lowest quality: fall back to the still and the frames
         }
       }
@@ -289,34 +290,34 @@ export function Hero() {
   return (
     <div className="hero-wrap" ref={wrapRef}>
       <section className="hero" ref={heroRef} aria-labelledby="hero-h1">
-        <h1 className="sr" id="hero-h1">Anshdeep Singh, developer and interface designer. I design it. I build it.</h1>
-        <div className="sr">{CHAPTERS.map((c) => c[1]).join(' ')}</div>
+        <h1 className="sr" id="hero-h1">{editing?'Anshdeep Singh, video editor and graphic designer. I cut it. I craft it.':'Anshdeep Singh, developer and interface designer. I design it. I build it.'}</h1>
+        <div className="sr">{chapters.map((c) => c[1]).join(' ')}</div>
         <canvas className="gl" ref={cvRef} aria-hidden="true" />
         <div className="gl-still" aria-hidden="true">
           <Image src="/img/tun-hero-bw.svg" alt="" fill priority fetchPriority="high" sizes="100vw" />
         </div>
         <div className="hu">
           <div className="hu-top">
-            <div className="hu-identity"><p className="mono hu-name"><Mark />Anshdeep Singh · Developer</p><nav className="hero-variants" aria-label="Portfolio variant"><Link href="/" aria-current="page"><span>01</span> Coding</Link><Link href="/editing"><span>02</span> Editing<Arrow/></Link></nav></div>
+            <div className="hu-identity"><p className="mono hu-name"><Mark />Anshdeep Singh · {editing?'Video Editor':'Developer'}</p><nav className="hero-variants" aria-label="Portfolio variant"><Link href="/coding" aria-current={!editing?"page":undefined}><span>01</span> Coding{editing&&<Arrow/>}</Link><Link href="/editing" aria-current={editing?"page":undefined}><span>02</span> Editing{!editing&&<Arrow/>}</Link></nav></div>
             <p className="mono">Punjab, India · <Clock /> GMT+5:30</p>
           </div>
-          <div className="hu-d" aria-hidden="true"><span className="hl hl-d">I design it.</span></div>
-          <div className="hu-p" aria-hidden="true"><span className="hl hl-p">I build it.</span></div>
+          <div className="hu-d" aria-hidden="true"><span className="hl hl-d">{editing?'I cut it.':'I design it.'}</span></div>
+          <div className="hu-p" aria-hidden="true"><span className="hl hl-p">{editing?'I craft it.':'I build it.'}</span></div>
           <div className="hu-bl">
-            <p className="lead">I build apps, websites and practical tools, with an eye for the interface as well as the code.</p>
-            <p className="mono mute">BCA Data Science · Chandigarh University</p>
+            <p className="lead">{editing?'I edit music videos, reels and lyrical content, and design thumbnails, posters and social visuals.':'I build apps, websites and practical tools, with an eye for the interface as well as the code.'}</p>
+            <p className="mono mute">{editing?'Independent creative practice since 2019':'BCA Data Science · Chandigarh University'}</p>
           </div>
-          <div className="hu-br"><Link className="btn" href="/contact" data-cursor="link">Get in touch<Arrow /></Link></div>
+          <div className="hu-br"><Link className="btn" href={editing?"/editing#contact":"/contact"} data-cursor="link">Get in touch<Arrow /></Link></div>
         </div>
         <div className="chs-scrim" aria-hidden="true" />
         <div className="chs" aria-hidden="true">
-          {CHAPTERS.map(([a, b], i) => (
+          {chapters.map(([a, b], i) => (
             <p className={`chp chp-${i + 1}`} key={a}><span className="mono">{a}</span>{b}</p>
           ))}
         </div>
         <div className="hud" aria-hidden="true">
           <p className="hud-deg num"><span className="hud-num" />°</p>
-          <p className="hud-lbl mono"><span className="hud-cue">Scroll to go through the slash</span><span className="hud-ph hud-ph-d">d · design</span><span className="hud-ph hud-ph-p">p · production</span></p>
+          <p className="hud-lbl mono"><span className="hud-cue">Scroll to go through the slash</span><span className="hud-ph hud-ph-d">{editing?'01 · edit':'d · design'}</span><span className="hud-ph hud-ph-p">{editing?'02 · finish':'p · production'}</span></p>
         </div>
         {/* the tunnel fades to bone, so it hands straight over to the work list */}
         <div className="flash" aria-hidden="true" />

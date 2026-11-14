@@ -1,1 +1,1 @@
-import type { MetadataRoute } from 'next';import {SITE_URL} from '@/lib/site';export default function sitemap():MetadataRoute.Sitemap{return ['', '/work','/about','/contact','/resume','/editing','/work/portfolio'].map(p=>({url:SITE_URL+p}));}
+import type { MetadataRoute } from 'next';import {SITE_URL} from '@/lib/site';export default function sitemap():MetadataRoute.Sitemap{return ['/coding', '/work','/about','/contact','/resume','/editing','/work/portfolio'].map(p=>({url:SITE_URL+p}));}

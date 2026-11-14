@@ -14,25 +14,15 @@ export const metadata: Metadata = {
 // Numbers only. Digital Revo lives in the intro and the experience list, where it reads as a role, not a stat.
 // Same giant index as the home stats. [number, unit, label, sub]; a null unit is the time zone, which never counts up
 const FACTS: [number,string|null,string,string|null][]=[[5,'','Featured projects','Apps, web and systems'],[4,'','Project categories',null],[2027,'','Expected graduation','Chandigarh University'],[5.5,null,'Based in Punjab, India','working worldwide']];
-const RULES = [
-  ['No handoff', 'When you hire me for both, the person who designs it builds it, so nothing gets lost between the file and the browser.'],
-  ['Real things early', 'A working prototype early in the process. People react to a real page faster than to a picture of one.'],
-  ['Systems over pages', 'Tokens and components first, so page twelve gets the same care as page one.'],
-  ['Plain talk', 'Clear goals, straightforward communication and no jargon. You always know what happens next.'],
-];
-const STEPS = [
-  ['ps-d', 'd', 'Discover', 'A first conversation about goals and constraints. What has to be true for this to work.'],
-  ['ps-d', 'd', 'Design', 'Layout, typography and interaction in code or a prototype. Decisions, not decoration.'],
-  ['ps-p', 'p', 'Build', 'Choose the appropriate web, Android or systems stack.'],
-  ['ps-x ps-p', 'p', 'Launch', 'Performance, analytics and handover docs. Then I stay on call.'],
-];
-const TD = ['UI/UX','Prototyping','Video editing','Motion design'];
+const RULES=[['Understand the problem','I start with what the app or website needs to do and how people will actually use it.'],['Build a real prototype','I turn the idea into a working interface, not just a design mock-up.'],['Test and improve','I check real devices, responsive layouts, errors and user flows, then improve the experience.'],['Keep learning','I use feedback, open-source tools and practical experiments to make the next version better.']];
+const STEPS=[['ps-d','d','Research','Understand the use case and choose an appropriate stack.'],['ps-d','d','Design','Plan the interface, navigation, layout and responsive behaviour.'],['ps-p','p','Develop','Build the working application, connect the necessary services and test features.'],['ps-x ps-p','p','Ship','Deploy, verify real functionality and iterate on feedback.']];
+const TD = ['UI/UX','Prototyping','Responsive design','Motion design'];
 const TP = ['HTML','CSS','JavaScript','TypeScript','Tailwind CSS','React','Flutter','Dart','Python','SQL','MySQL','Rust','GitHub','Vercel'];
 
 const Ext = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a className="lnk mono" href={href} target="_blank" rel="noopener" data-cursor="link">{children}<Arrow /></a>
 );
-const XP: [React.ReactNode,string,React.ReactNode,React.ReactNode][] = [['2024 – 2027','BCA (Hons. with Research)','Data Science · Chandigarh University',<Ext href="/resume">Résumé</Ext>],['2026','Web Development Intern','AniWebDesigns Pvt. Ltd. · Mohali',null],['Ongoing','Independent developer','Apps, websites and creative projects',<Ext href="https://github.com/anshdeepofficial1">GitHub</Ext>]];
+const XP: [React.ReactNode,string,React.ReactNode,React.ReactNode][] = [['2024 – 2027','BCA (Hons. with Research)','Data Science · Chandigarh University',<Ext href="/resume">Résumé</Ext>],['2026','Web Development Intern','AniWebDesigns Pvt. Ltd. · Mohali',null],['Ongoing','Independent developer','Apps, websites and software projects',<Ext href="https://github.com/anshdeepofficial1">GitHub</Ext>]];
 const tags = (L: string[]) => <div className="tags">{L.map((t) => <span className="tag" key={t}>{t}</span>)}</div>;
 
 export default function AboutPage() {
@@ -44,7 +34,7 @@ export default function AboutPage() {
             <h1 className="ab-t t-d1 gc-1-8" id="ph-h"><span>One person,</span><span className="wide">both sides</span><span>of the line.</span></h1>
           </div>
           <div className="ab-in grid">
-            <p className="gc-1-6">I’m Anshdeep Singh, a BCA Data Science undergraduate at Chandigarh University. I build apps, websites and practical tools, combining front-end development, interface design and SQL. I also edit video and create visual assets.</p>
+            <p className="gc-1-6">I’m Anshdeep Singh, a BCA Data Science undergraduate at Chandigarh University. I build apps, websites and practical tools, combining front-end development, interface design and SQL. My coding portfolio includes Android apps, web applications, data tools and operating system experiments.</p>
           </div>
         </section>
         <section className="ab-f on-bone" aria-label="At a glance">
@@ -73,7 +63,7 @@ export default function AboutPage() {
         <section className="ps-w on-bone" aria-labelledby="ps-h">
           <div className="wrap">
             <SecHead n="02" label="Process" right="d · design → p · production" />
-            <div className="sec-top grid"><h2 className="t-d2 gc-1-8" id="ps-h">Drawn, then built.</h2><p className="lead gc-9-12">Two steps on each side of the line. The same person walks you through all four.</p></div>
+            <div className="sec-top grid"><h2 className="t-d2 gc-1-8" id="ps-h">Drawn, then built.</h2><p className="lead gc-9-12">From understanding a problem to a real, tested deployment.</p></div>
             {/* the two design steps sit left, thin and wide; the two build steps answer from the right, heavy, the way the
                 hero sets "I design it." against "I build it." The slash runs between them where a handoff would be */}
             <ol className="ps-g">

@@ -2,7 +2,7 @@ import {AS_POLYGONS} from '@/lib/brand';
 // Precompute the signed distance once, rather than evaluating dozens of edges on every ray step.
 // RG encodes 16-bit distance, B identifies the nearest blue accent contour. Raw texture rows run bottom to top.
 export function makeLogoTexture(gl:WebGL2RenderingContext){
- const n=384, range=1.6, bound=1.1, pixels=new Uint8Array(n*n*4);
+ const n=640, range=1.6, bound=1.1, pixels=new Uint8Array(n*n*4);
  const polygons=AS_POLYGONS.map(poly=>poly.map(([x,y])=>[(x-600)/680,(619-y)/680]));
  const edges=polygons.map(poly=>poly.map(([x,y],i)=>{const [a,b]=poly[(i+1)%poly.length];const dx=a-x,dy=b-y;return {x,y,dx,dy,inv:1/(dx*dx+dy*dy),a,b};}));
  for(let j=0;j<n;j++)for(let i=0;i<n;i++){const x=((i+.5)/n*2-1)*bound,y=((j+.5)/n*2-1)*bound;let d=1e9,part=0;

@@ -4,7 +4,7 @@ const selected:Work[]=[
   {
     "k": "anidash",
     "name": "AniDash",
-    "cat": "Android anime app",
+    "cat": "Anime app & web player",
     "fil": "app",
     "desc": "Anime discovery, watchlists, episode tracking and a web companion.",
     "short": "Anime discovery, watchlists, episode tracking and a web companion.",
@@ -13,13 +13,13 @@ const selected:Work[]=[
       "Dart",
       "Android"
     ],
-    "href": "https://anidashweb.vercel.app/",
-    "go": "anidashweb.vercel.app",
+    "href": "https://anidashgo.vercel.app/",
+    "go": "anidashgo.vercel.app",
     "ext": true,
     "img": "/img/actual/anidash.jpg",
     "github": "https://github.com/anshdeepofficial1/AniDash",
-    "sourceImg": "https://raw.githubusercontent.com/anshdeepofficial1/AniDash/HEAD/screenshots/desktop/home.jpg",
-    "previewLabel": "App screenshot"
+    "sourceImg": "",
+    "previewLabel": "Live web app screenshot"
   },
   {
     "k": "vybe",
@@ -33,13 +33,13 @@ const selected:Work[]=[
       "Music",
       "Material Design"
     ],
-    "href": "https://vybetune.vercel.app/",
-    "go": "vybetune.vercel.app",
+    "href": "https://vybetune.vercel.app/download.html",
+    "go": "vybetune.vercel.app/download.html",
     "ext": true,
     "img": "/img/actual/vybe.jpg",
     "github": "https://github.com/anshdeepofficial1/VYBE",
-    "sourceImg": "https://raw.githubusercontent.com/anshdeepofficial1/VYBE/HEAD/docs/screenshots/vybe-home.png",
-    "previewLabel": "App screenshot"
+    "sourceImg": "",
+    "previewLabel": "Download website screenshot"
   },
   {
     "k": "zylo",
@@ -52,13 +52,13 @@ const selected:Work[]=[
       "Android",
       "Media"
     ],
-    "href": "https://zylod.vercel.app/",
-    "go": "zylod.vercel.app",
+    "href": "https://zylod.vercel.app/home",
+    "go": "zylod.vercel.app/home",
     "ext": true,
     "img": "/img/actual/zylo.jpg",
     "github": "https://github.com/anshdeepofficial1/ZYLO",
     "sourceImg": "",
-    "previewLabel": "Website preview"
+    "previewLabel": "Website screenshot"
   },
   {
     "k": "copycloud",
@@ -77,9 +77,30 @@ const selected:Work[]=[
     "ext": true,
     "img": "/img/actual/copycloud.jpg",
     "github": "https://github.com/anshdeepofficial1/Copy-Cloud",
-    "sourceImg": "https://raw.githubusercontent.com/anshdeepofficial1/Copy-Cloud/HEAD/Screenshots/Send.png",
-    "previewLabel": "Website screenshot"
+    "sourceImg": "",
+    "previewLabel": "Live website screenshot"
   },
+  {
+    "k": "socialboost",
+    "name": "SocialBoost",
+    "cat": "Social media tools",
+    "fil": "web",
+    "desc": "Creator analytics and social content tools.",
+    "short": "Creator analytics and social content tools.",
+    "tags": [
+      "Web",
+      "Social"
+    ],
+    "href": "https://socialboostweb.vercel.app/",
+    "go": "socialboostweb.vercel.app",
+    "ext": true,
+    "img": "/img/actual/socialboost.jpg",
+    "github": "https://github.com/anshdeepofficial1/SocialBoost",
+    "sourceImg": "",
+    "previewLabel": "Live website screenshot"
+  }
+];
+const remaining:Work[]=[
   {
     "k": "nova",
     "name": "NOVA",
@@ -99,9 +120,7 @@ const selected:Work[]=[
     "github": "https://github.com/anshdeepofficial1/NOVA",
     "sourceImg": "",
     "previewLabel": "Repository / shell preview"
-  }
-];
-const remaining:Work[]=[
+  },
   {
     "k": "pitchcraft",
     "name": "Pitchcraft",
@@ -158,25 +177,6 @@ const remaining:Work[]=[
     "github": "https://github.com/anshdeepofficial1/ZMB",
     "sourceImg": "",
     "previewLabel": "Repository preview"
-  },
-  {
-    "k": "socialboost",
-    "name": "SocialBoost",
-    "cat": "Social media tools",
-    "fil": "web",
-    "desc": "A project for social content workflows.",
-    "short": "A project for social content workflows.",
-    "tags": [
-      "Web",
-      "Social"
-    ],
-    "href": "https://socialboost-coral-ten.vercel.app/",
-    "go": "socialboost-coral-ten.vercel.app",
-    "ext": true,
-    "img": "/img/actual/socialboost.jpg",
-    "github": "https://github.com/anshdeepofficial1/SocialBoost",
-    "sourceImg": "",
-    "previewLabel": "Website preview"
   },
   {
     "k": "darkanimewalls",
@@ -395,11 +395,66 @@ const remaining:Work[]=[
     "github": "https://github.com/anshdeepofficial1/Snake-Game",
     "previewLabel": "Repository preview",
     "sourceImg": ""
+  },
+  {
+    "k": "anidash-web",
+    "name": "AniDash Website",
+    "cat": "Web companion",
+    "fil": "web",
+    "desc": "The dedicated AniDash web application.",
+    "short": "Dedicated AniDash web app.",
+    "tags": [
+      "Web",
+      "PWA"
+    ],
+    "href": "https://anidashgo.vercel.app/",
+    "go": "anidashgo.vercel.app",
+    "ext": true,
+    "img": "/img/actual/anidash.jpg",
+    "github": "https://github.com/anshdeepofficial1/AniDash-Website",
+    "previewLabel": "Website screenshot"
+  },
+  {
+    "k": "socialboost-app",
+    "name": "SocialBoost App",
+    "cat": "Mobile application",
+    "fil": "app",
+    "desc": "The mobile companion for SocialBoost.",
+    "short": "SocialBoost mobile project.",
+    "tags": [
+      "App",
+      "Social"
+    ],
+    "href": "https://github.com/anshdeepofficial1/SocialBoost-APP",
+    "go": "github.com",
+    "ext": true,
+    "img": "/img/actual/socialboost-app.jpg",
+    "github": "https://github.com/anshdeepofficial1/SocialBoost-APP",
+    "previewLabel": "Repository preview"
+  },
+  {
+    "k": "portfolio",
+    "name": "Portfolio",
+    "cat": "Personal website",
+    "fil": "web",
+    "desc": "Personal coding and editing portfolio.",
+    "short": "Personal portfolio.",
+    "tags": [
+      "Next.js",
+      "WebGL2",
+      "GSAP"
+    ],
+    "href": "/work/portfolio",
+    "go": "anshdeepofficial1.vercel.app",
+    "ext": false,
+    "img": "/img/actual/portfolio.jpg",
+    "github": "https://github.com/anshdeepofficial1/Portfolio",
+    "previewLabel": "Website screenshot"
   }
 ];
 import previewManifest from './preview-manifest.json';
 const captures=previewManifest as Record<string,{label:string;source:string;unavailable?:boolean}>;
-const withCapture=(w:Work):Work=>({...w,previewLabel:captures[w.k]?.label || w.previewLabel,previewUnavailable:captures[w.k]?.unavailable});
+const withCapture=(w:Work):Work=>({...w,previewLabel:captures[w.k]?.label || w.previewLabel,previewUnavailable:captures[w.k]?.unavailable ?? (w.k==='socialboost-app')});
 export const CLIENT=selected.map(withCapture);
 export const MORE=remaining.map(withCapture);
 export const CONCEPTS:Work[]=[];

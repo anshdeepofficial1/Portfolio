@@ -18,7 +18,7 @@ export function Cursor() {
     const over = (e: PointerEvent) => {
       const t = e.target as Element | null;
       const c = t?.closest?.('[data-cursor]');
-      const mode = c?.getAttribute('data-cursor') ?? '';
+      const mode = t?.closest?.('.brand,.as-mark,.hu-name') ? 'brand' : c?.getAttribute('data-cursor') ?? '';
       if (cur.getAttribute('data-mode') !== mode) cur.setAttribute('data-mode', mode);
       const l = c?.getAttribute('data-cl');
       if (l && lbl.current) lbl.current.textContent = l;

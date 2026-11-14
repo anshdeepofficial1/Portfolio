@@ -14,6 +14,8 @@ export const sectionOf = (path: string) => (path.startsWith('/work') ? 'work' : 
 export function Nav() {
   const path = usePathname();
   const cur = sectionOf(path);
+  const editing=path.startsWith('/editing');
+  const links=editing?[{key:'work',label:'Work',href:'/editing#work'},{key:'about',label:'About',href:'/editing#experience'},{key:'resume',label:'Resume',href:'/resume'},{key:'contact',label:'Contact',href:'/editing#contact'}]:NAV;
   const { menu, setMenu } = useSite();
   const bg = useRef<HTMLDivElement>(null);
 
@@ -37,20 +39,20 @@ export function Nav() {
     <div className="nav-bg" ref={bg} aria-hidden="true" />
     <header className="nav">
       <div className="nav-in">
-        <Link className="brand" href={path === '/' ? '#top' : '/'} aria-label="Anshdeep Singh, home" data-cursor="link">
+        <Link className="brand" href={editing?'/editing':path==='/coding'?'#top':'/coding'} aria-label="Anshdeep Singh, home" data-cursor="link">
           <Mark /><span className="brand-word">Anshdeep Singh</span>
         </Link>
         <nav className="nav-links" aria-label="Primary">
-          {NAV.map((n) => (
+          {links.map((n) => (
             <Link key={n.key} className={`nl${cur === n.key ? ' on' : ''}`} href={n.href} data-cursor="link" aria-current={cur === n.key ? 'page' : undefined}>
               <span className="roll" data-t={n.label}>
                 <span>{n.label}</span>
               </span>
             </Link>
           ))}
-          <Link className="nl variant-nav" href={path.startsWith('/editing')?'/':'/editing'} data-cursor="link"><span className="roll" data-t={path.startsWith('/editing')?'Coding':'Editing'}><span>{path.startsWith('/editing')?'Coding':'Editing'}</span></span></Link>
+          <Link className="nl variant-nav" href={editing?'/coding':'/editing'} data-cursor="link"><span className="roll" data-t={path.startsWith('/editing')?'Coding':'Editing'}><span>{path.startsWith('/editing')?'Coding':'Editing'}</span></span></Link>
         </nav>
-        <Link className="nav-cta" href="/contact" data-cursor="link">
+        <Link className="nav-cta" href={editing?"/editing#contact":"/contact"} data-cursor="link">
           Get in touch
           <Arrow />
         </Link>
