@@ -9,7 +9,7 @@ import { Proof } from '@/components/home/Proof';
 import { ContactFooter } from '@/components/ContactFooter';
 
 // set here, not in the layout: a canonical in the layout is inherited by every page that forgets its own, /thanks and the 404 included
-export const metadata: Metadata = { alternates: { canonical: '/coding' } };
+export const metadata: Metadata = { title: 'Coding', alternates: { canonical: '/coding' } };
 
 export default function Home() {
   return (

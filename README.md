@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/as-logo.svg" alt="AS monogram" width="136" />
+  <img src="public/as-logo-white.png" alt="AS monogram" width="144" />
   <h1>Anshdeep Singh</h1>
   <p><strong>DEVELOPER &nbsp; / &nbsp; VIDEO EDITOR &nbsp; / &nbsp; DIGITAL CREATOR</strong></p>
   <p>Two disciplines. One identity. Built with purpose.</p>
@@ -16,7 +16,7 @@
 
 ## One portfolio. Two perspectives.
 
-I build applications, websites and software tools, and create visual stories through video editing and graphic design. This repository is the home of my personal portfolio: a shared black-and-blue AS identity, two distinct experiences, and a collection of my work.
+I build applications, websites and software tools, and create visual stories through video editing and graphic design. My portfolio brings together a shared black-and-blue AS identity, two distinct experiences, and a collection of my work.
 
 <table>
 <tr><td width="50%" align="center"><a href="https://anshdeepofficial1.vercel.app/coding"><img src="public/img/actual/portfolio.jpg" alt="Coding portfolio" width="100%"/></a><strong>01 — Coding</strong><br/>Apps, web development, systems and software.</td><td width="50%" align="center"><a href="https://anshdeepofficial1.vercel.app/editing"><img src="public/img/actual/editing-portfolio.jpg" alt="Editing portfolio" width="100%"/></a><strong>02 — Editing</strong><br/>Video editing, motion and graphic design.</td></tr>
@@ -34,7 +34,7 @@ I build applications, websites and software tools, and create visual stories thr
 
 [Explore all 24 projects →](https://anshdeepofficial1.vercel.app/work)
 
-## Experience & technology
+## Skills & education
 
 - **Coding:** React, Next.js, TypeScript, Flutter, Dart, Python, SQL and Rust.
 - **Editing:** video editing, lyrical videos, reels, motion design, graphics and typography.
@@ -47,42 +47,11 @@ I build applications, websites and software tools, and create visual stories thr
 | Coding | [View resume](https://anshdeepofficial1.vercel.app/resume/coding) | [Download PDF](public/resumes/resume_coding.pdf) |
 | Editing | [View resume](https://anshdeepofficial1.vercel.app/editing/resume) | [Download PDF](public/resumes/resume_editing.pdf) |
 
-## Inside the portfolio
+## Explore my portfolio
 
-- Custom AS monogram and interactive WebGL2 tunnel.
-- Scroll-driven transitions, responsive navigation and accessible project previews.
-- Separate Coding and Editing pages and original PDF resumes.
-- Real project screenshots and a mobile-friendly layout.
-
-```text
-Portfolio/
-├── .github/workflows/    # Build and route verification
-├── public/
-│   ├── img/               # Actual project screenshots and motion assets
-│   ├── resumes/           # Original PDFs and preview images
-│   ├── as-logo.svg
-│   └── as-logo.png
-├── scripts/               # Asset generation and verification
-├── src/
-│   ├── app/               # Portfolio routes and metadata
-│   ├── components/        # Shared UI and motion
-│   ├── lib/               # Project data, identity and configuration
-│   └── styles/            # AS visual system
-├── next.config.ts
-├── package.json
-└── README.md
-```
-
-## Development
-
-Requires Node.js 22 or newer.
-
-```bash
-npm install
-npm run dev
-```
-
-Production: `npm run build` followed by `npm start`. The portfolio is deployed on Vercel.
+<p align="center">
+  <a href="https://anshdeepofficial1.vercel.app/coding"><strong>Explore Coding</strong></a> &nbsp;·&nbsp; <a href="https://anshdeepofficial1.vercel.app/editing"><strong>Explore Editing</strong></a> &nbsp;·&nbsp; <a href="https://anshdeepofficial1.vercel.app/work"><strong>All Projects</strong></a>
+</p>
 
 ## Contact
 
@@ -95,6 +64,6 @@ Production: `npm run build` followed by `npm start`. The portfolio is deployed o
 ---
 
 <div align="center">
-  <img src="public/as-logo.svg" alt="AS" width="42"/>
+  <img src="public/as-logo-white.png" alt="AS" width="42"/>
   <p><strong>Anshdeep Singh</strong><br/><sub>Personal content and branding reserved. Software license: <a href="LICENSE">MIT</a>.</sub></p>
 </div>
