@@ -1,15 +1,18 @@
 {
   "vybe": {
-    "label": "App screenshot",
-    "source": "https://raw.githubusercontent.com/anshdeepofficial1/VYBE/HEAD/docs/screenshots/vybe-home.png"
+    "label": "Live website screenshot",
+    "source": "https://vybetune.vercel.app/download.html",
+    "finalUrl": "https://vybetune.vercel.app/download.html"
   },
   "copycloud": {
-    "label": "Website screenshot",
-    "source": "https://raw.githubusercontent.com/anshdeepofficial1/Copy-Cloud/HEAD/Screenshots/Send.png"
+    "label": "Live website screenshot",
+    "source": "https://copycloud.me/",
+    "finalUrl": "https://copycloud.me/"
   },
   "anidash": {
-    "label": "App screenshot",
-    "source": "https://raw.githubusercontent.com/anshdeepofficial1/AniDash/HEAD/screenshots/desktop/home.jpg"
+    "label": "Live website screenshot",
+    "source": "https://anidashgo.vercel.app/",
+    "finalUrl": "https://anidashgo.vercel.app/"
   },
   "nova": {
     "label": "NOVA shell preview",
@@ -21,8 +24,9 @@
     "unavailable": true
   },
   "zylo": {
-    "label": "Website screenshot",
-    "source": "https://zylod.vercel.app/"
+    "label": "Live website · sign-in required",
+    "source": "https://zylod.vercel.app/home",
+    "finalUrl": "https://zylod.vercel.app/sign-in"
   },
   "zmb": {
     "label": "Repository preview",
@@ -45,8 +49,9 @@
     "source": "https://github.com/anshdeepofficial1/SnapStream"
   },
   "socialboost": {
-    "label": "Repository preview",
-    "source": "https://github.com/anshdeepofficial1/SocialBoost"
+    "label": "Live website screenshot",
+    "source": "https://socialboostweb.vercel.app/",
+    "finalUrl": "https://socialboostweb.vercel.app/"
   },
   "aboutme": {
     "label": "Preview unavailable",
@@ -84,5 +89,10 @@
   "snake": {
     "label": "Repository preview",
     "source": "https://github.com/anshdeepofficial1/Snake-Game"
+  },
+  "socialboost-app": {
+    "label": "Repository preview",
+    "source": "https://github.com/anshdeepofficial1/SocialBoost-APP",
+    "finalUrl": "https://github.com/anshdeepofficial1/SocialBoost-APP"
   }
 }
