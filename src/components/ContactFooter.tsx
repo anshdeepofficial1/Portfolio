@@ -3,15 +3,16 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
-import { AVAILABILITY, EMAIL, NAV, SOCIAL, PHONE, TEL, WHATSAPP } from '@/lib/site';
+import { AVAILABILITY, EMAIL, NAV, SOCIAL, PHONE, TEL, WHATSAPP, EDIT_EMAIL } from '@/lib/site';
 import { Arrow, Up } from './Icons';
 import { Clock } from './Clock';
 
-const EXPLORE = [{ label: 'Coding', href: '/' }, {label:'Editing',href:'/editing'}, ...NAV.filter((n) => n.key !== 'contact')];
+const EXPLORE = [{ label: 'Coding', href: '/coding' }, {label:'Editing',href:'/editing'}, ...NAV.filter((n) => n.key !== 'contact')];
 
 /** The same finale on every page. Letters of the email swell in width and weight near the pointer. */
 export function ContactFooter({ label = 'Contact' }: { label?: string }) {
   const path = usePathname();
+  const editing=path.startsWith('/editing');const email=editing?EDIT_EMAIL:EMAIL;const explore=editing?[{label:'Coding',href:'/coding'},{label:'Editing',href:'/editing'},{label:'Selected work',href:'/editing#work'},{label:'Experience',href:'/editing#experience'},{label:'Resume',href:'/resume'}]:EXPLORE;
   const mail = useRef<HTMLAnchorElement>(null);
   const foot = useRef<HTMLElement>(null);
   const gx = useRef({ to: 0.5, at: 0.5 });
@@ -55,12 +56,12 @@ export function ContactFooter({ label = 'Contact' }: { label?: string }) {
       </div>
       <h2 className="ct-h wrap" id="contact-h">
         <span className="ct-h1">Something</span>
-        <span className="ct-h2">worth building?</span>
+        <span className="ct-h2">{editing?'worth creating?':'worth building?'}</span>
       </h2>
       <div className="wrap">
-        <a className="ct-mail" ref={mail} href={`mailto:${EMAIL}`} data-cursor="link" aria-label={`Email ${EMAIL}`} onPointerMove={onMove} onPointerLeave={onLeave}>
+        <a className="ct-mail" ref={mail} href={`mailto:${email}`} data-cursor="link" aria-label={`Email ${email}`} onPointerMove={onMove} onPointerLeave={onLeave}>
           <span className="ct-ls" aria-hidden="true">
-            {[...EMAIL].map((c, i) => <span className="ct-l" key={i}>{c}</span>)}
+            {[...email].map((c, i) => <span className="ct-l" key={i}>{c}</span>)}
           </span>
         </a>
       </div>
@@ -68,23 +69,23 @@ export function ContactFooter({ label = 'Contact' }: { label?: string }) {
         <nav className="ct-col" aria-label="Explore">
           <p className="mono mute">Explore</p>
           <ul>
-            {EXPLORE.map((n) => <li key={n.href}><a href={n.href} data-cursor="link">{n.label}</a></li>)}
+            {explore.map((n) => <li key={n.href}><a href={n.href} data-cursor="link">{n.label}</a></li>)}
           </ul>
         </nav>
         <div className="ct-col">
           <p className="mono mute">Connect</p>
           <ul>
-            {SOCIAL.map((s) => <li key={s.name}><a href={s.href} target="_blank" rel="noopener" data-cursor="link">{s.name}</a></li>)}
+            {SOCIAL.filter(s=>!editing||s.name!=='GitHub').map((s) => <li key={s.name}><a href={s.href} target="_blank" rel="noopener" data-cursor="link">{s.name}</a></li>)}
           </ul>
         </div>
         <div className="ct-col">
           <p className="mono mute">Contact</p>
           <ul>
-            <li><a href={`mailto:${EMAIL}`} data-cursor="link">{EMAIL}</a></li>
+            <li><a href={`mailto:${email}`} data-cursor="link">{email}</a></li>
             <li><a href={TEL}>{PHONE}</a></li><li><a href={WHATSAPP} target="_blank" rel="noopener">WhatsApp</a></li><li className="ct-addr">Punjab, India<br />Working worldwide, GMT+5:30</li>
           </ul>
         </div>
-        <Link className="btn ct-btn" href={path === '/contact' ? '#top' : '/contact'} data-cursor="link">
+        <Link className="btn ct-btn" href={editing?'mailto:'+email:path === '/contact' ? '#top' : '/contact'} data-cursor="link">
           Get in touch
           <Arrow />
         </Link>

@@ -13,7 +13,7 @@ import { useSite } from './Site';
 import { lenis } from './SmoothScroll';
 
 const ITEMS = [
-  { key: 'home', label: 'Coding', href: '/' },
+  { key: 'home', label: 'Coding', href: '/coding' },
   { key: 'editing', label: 'Editing', href: '/editing' },
   { key: 'work', label: 'Work', href: '/work' },
   { key: 'about', label: 'About', href: '/about' },
@@ -24,7 +24,8 @@ const ITEMS = [
 export function PhoneMenu() {
   const { menu, setMenu } = useSite();
   const path = usePathname();
-  const cur = path === '/' ? 'home' : sectionOf(path);
+  const editing=path.startsWith('/editing');const cur = path === '/coding' || path==='/' ? 'home' : sectionOf(path);
+ const items=ITEMS.map(it=>editing&&it.key==='work'?{...it,href:'/editing#work'}:editing&&it.key==='about'?{...it,href:'/editing#experience'}:it);
   const box = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -54,7 +55,7 @@ export function PhoneMenu() {
   return (
     <div id="site-menu" className="menu" role="dialog" aria-modal="true" aria-label="Menu" ref={box} inert={!menu} aria-hidden={!menu}>
       <div className="menu-top">
-        <Link className="brand" href="/" aria-label="Anshdeep Singh, home" onClick={close}>
+        <Link className="brand" href={editing?"/editing":"/coding"} aria-label="Anshdeep Singh, home" onClick={close}>
           <Mark />
           <span className="brand-word">anshdeep singh</span>
         </Link>
@@ -67,7 +68,7 @@ export function PhoneMenu() {
         <span className="av"><i />{AVAILABILITY}</span>
       </p>
       <nav className="menu-l" aria-label="Menu">
-        {ITEMS.map((it, i) => (
+        {items.map((it, i) => (
           <Link key={it.key} className={cur === it.key ? 'on' : ''} href={it.href} onClick={close}>
             {it.label}
             <span>0{i + 1}</span>
@@ -75,11 +76,11 @@ export function PhoneMenu() {
         ))}
       </nav>
       <div className="menu-bot">
-        <Link className="btn" href="/contact" onClick={close}>
+        <Link className="btn" href={editing?"/editing#contact":"/contact"} onClick={close}>
           Get in touch
           <Arrow />
         </Link>
-        <Social />
+        {!editing&&<Social/>}
         <p className="mono mute">Punjab, India · <Clock /> GMT+5:30</p>
       </div>
     </div>

@@ -171,13 +171,13 @@ void main() {
   if (hit) col = col * mix(0.15, 1.0, fog) + endC * (1.0 - exp(-0.045 * fogT));
   else col += endC;
   col += bp;
-  col = mix(col, vec3(1.0, 0.98, 0.95) * 1.4, uEnd * uEnd);
+  col = mix(col, vec3(0.85, 0.91, 1.0) * 1.4, uEnd * uEnd);
   col = aces(col * 1.05);
   col = pow(col, vec3(1.0 / 2.2));
   vec2 uv = frag / uRes - 0.5;
   col *= 1.0 - 0.5 * dot(uv, uv);
   col = max(col, vec3(0.0));
-  if (hit) col += (hash(frag + fract(uTime * 0.37) * 91.0) - 0.5) * .015;
+  if (hit) col += (hash(frag + fract(uTime * 0.37) * 91.0) - 0.5) * .004;
   fragColor = vec4(col, 1.0);
 }`;
 

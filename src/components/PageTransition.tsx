@@ -8,7 +8,7 @@ import { NAV } from '@/lib/site';
 import { SLASH } from '@/lib/slash';
 
 const labelFor = (path: string) => {
-  if (path === '/') return 'Coding';
+  if (path === '/'||path==='/coding'||path==='/app') return 'Coding';
   if (path.startsWith('/editing')) return 'Editing';
   const top = NAV.find((n) => path === n.href || path.startsWith(`${n.href}/`));
   return top ? top.label : '';
@@ -52,7 +52,7 @@ export function PageTransition() {
         .set(el, { visibility: 'visible', xPercent: 100 })
         .set(mark.current, { rotate: 0 })
         .to(el, { xPercent: 0, duration: 0.6, ease: 'expo.inOut' })
-        .to(mark.current, { rotate: 180, duration: 0.9, ease: 'expo.inOut' }, 0)
+        .to(mark.current, { rotate: 360, duration: 0.9, ease: 'expo.inOut' }, 0)
         .add(() => router.push(url.pathname + url.search + url.hash));
       // If the route never resolves, never leave the page covered.
       s.safety = window.setTimeout(() => uncover(), 5000);

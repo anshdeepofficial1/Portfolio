@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
-import { WORK } from '@/lib/work';
+import { ALL_WORK as WORK } from '@/lib/work';
 import { lenis } from './SmoothScroll';
 import { ConceptScene, SCENES } from './concept';
 import { Arrow } from './Icons';
@@ -90,21 +90,22 @@ export function CaseViewer() {
   return (
     <div ref={root} className={`lb${open ? ' on' : ''}`} inert={!open} role="dialog" aria-modal="true" aria-label={w ? `${w.name}, case ${i! + 1}` : 'Case viewer'} aria-hidden={!open}>
       <div className="lb-top">
-        <p><span className="mute">Case 0{(i ?? 0) + 1}</span><b>{w?.name}</b>{w?.concept && <span className="mute"> · Concept</span>}</p>
+        <p><span className="mute">Case {String((i ?? 0) + 1).padStart(2,'0')}</span><b>{w?.name}</b>{w?.concept && <span className="mute"> · Concept</span>}</p>
         <button type="button" ref={closeBtn} onClick={close} data-cursor="link">Close</button>
       </div>
       <div className="lb-stage" onClick={(e) => e.target === e.currentTarget && close()}>
         {w && (
           <div className={`lb-f${w.scene ? ' is-cx' : ''}`} ref={frame} key={w.k}>
-            {w.scene ? <ConceptScene k={w.k} active={open} full /> : w.video ? <video poster={posterOf(w.img)} autoPlay muted loop playsInline aria-label={`${w.name}, scrolling through the live site`}>{videoSources(w.video)}</video> : <Image src={w.img} alt={`${w.name} ${w.previewLabel || 'preview'}`} fill sizes="90vw" />}
+            {w.scene ? <ConceptScene k={w.k} active={open} full /> : w.video ? <video poster={posterOf(w.img)} autoPlay muted loop playsInline aria-label={`${w.name}, scrolling through the live site`}>{videoSources(w.video)}</video> : w.previewUnavailable ? <p className="lb-unavailable">No public screenshot available. Open the project link below.</p> : <Image src={w.img} alt={`${w.name} ${w.previewLabel || 'preview'}`} fill sizes="90vw" />}
           </div>
         )}
       </div>
       <div className="lb-bot">
         <p><button type="button" onClick={() => go(-1)} data-cursor="link">Prev</button> <span className="mute">/</span> <button type="button" onClick={() => go(1)} data-cursor="link">Next</button></p>
+        {w && <p className="lb-url mono">{w.go}</p>}
         {w && (w.concept
           ? <p className="lb-hint">{SCENES[w.k]?.hint}</p>
-          : <a className={w.ext ? 'btn btn-line btn-s' : 'lnk'} href={w.href} target={w.ext ? '_blank' : undefined} rel={w.ext ? 'noopener' : undefined} data-cursor="link">{w.ext ? w.href.includes('github.com') ? 'Open repository' : 'Open live site' : w.go}<Arrow /></a>)}
+          : <a className={w.ext ? 'btn btn-line btn-s' : 'lnk'} href={w.href} target={w.ext ? '_blank' : undefined} rel={w.ext ? 'noopener' : undefined} data-cursor="link">{w.ext ? w.href.includes('github.com') ? 'Open repository' : 'Visit website' : w.go}<Arrow /></a>)}
       </div>
     </div>
   );

@@ -23,13 +23,14 @@ export function useRootFlag(name: string, on: boolean) {
 
 // The intro plays once per visit: the first home render, never again after a client-side navigation. A visitor who
 // saw it in the last day skips it (layout.tsx marks <html> with intro-seen before first paint).
-let introPlayed = false;
+const played = new Set<string>();
+const isHome=(path:string)=>path==='/'||path==='/coding'||path==='/editing';
 const markSeen = () => { try { localStorage.setItem('as-intro-v1', String(Date.now())); } catch { /* private mode */ } };
 
 export function Site({ children }: { children: React.ReactNode }) {
   const path = usePathname();
   const [menu, setMenu] = useState(false);
-  const [flags, setFlags] = useState<string[]>(() => (path === '/' && !introPlayed ? ['has-intro'] : []));
+  const [flags, setFlags] = useState<string[]>(() => (isHome(path) && !played.has(path) ? ['has-intro'] : []));
 
   const flag = useCallback((name: string, on: boolean) => {
     setFlags((f) => (on ? (f.includes(name) ? f : [...f, name]) : f.filter((x) => x !== name)));
@@ -50,16 +51,16 @@ export function Site({ children }: { children: React.ReactNode }) {
     if (!go || !flags.includes('has-intro')) return;
     const seen = document.documentElement.classList.contains('intro-seen');
     const t = setTimeout(() => {
-      introPlayed = true;
+      played.add(path);
       if (!seen) markSeen();
       flag('has-intro', false);
     }, seen ? 1500 : 4500);
     return () => clearTimeout(t);
-  }, [go, flags, flag]);
+  }, [go, flags, flag,path]);
 
   useEffect(() => {
-    if (path !== '/') introPlayed = true;
-  }, [path]);
+    if(isHome(path)&&!played.has(path)){document.documentElement.classList.remove('intro-seen');flag('has-intro',true);}else{flag('has-intro',false);}
+  }, [path,flag]);
 
   const value = useMemo(() => ({ menu, setMenu, flag }), [menu, flag]);
   const cls = ['site', 'has-grain', ...flags, menu ? 'menu-open' : ''].filter(Boolean).join(' ');
