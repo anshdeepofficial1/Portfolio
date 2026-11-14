@@ -59,8 +59,8 @@ export function Site({ children }: { children: React.ReactNode }) {
   }, [go, flags, flag,path]);
 
   useEffect(() => {
-    if (path !== '/') introPlayed = true;
-  }, [path]);
+    if(isHome(path)&&!played.has(path)){document.documentElement.classList.remove('intro-seen');flag('has-intro',true);}else{flag('has-intro',false);}
+  }, [path,flag]);
 
   const value = useMemo(() => ({ menu, setMenu, flag }), [menu, flag]);
   const cls = ['site', 'has-grain', ...flags, menu ? 'menu-open' : ''].filter(Boolean).join(' ');

@@ -96,7 +96,7 @@ export function CaseViewer() {
       <div className="lb-stage" onClick={(e) => e.target === e.currentTarget && close()}>
         {w && (
           <div className={`lb-f${w.scene ? ' is-cx' : ''}`} ref={frame} key={w.k}>
-            {w.scene ? <ConceptScene k={w.k} active={open} full /> : w.video ? <video poster={posterOf(w.img)} autoPlay muted loop playsInline aria-label={`${w.name}, scrolling through the live site`}>{videoSources(w.video)}</video> : <Image src={w.img} alt={`${w.name} ${w.previewLabel || 'preview'}`} fill sizes="90vw" />}
+            {w.scene ? <ConceptScene k={w.k} active={open} full /> : w.video ? <video poster={posterOf(w.img)} autoPlay muted loop playsInline aria-label={`${w.name}, scrolling through the live site`}>{videoSources(w.video)}</video> : w.previewUnavailable ? <p className="lb-unavailable">No public screenshot available. Open the project link below.</p> : <Image src={w.img} alt={`${w.name} ${w.previewLabel || 'preview'}`} fill sizes="90vw" />}
           </div>
         )}
       </div>

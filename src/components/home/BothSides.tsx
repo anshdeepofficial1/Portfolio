@@ -55,7 +55,7 @@ export function BothSides({editing=false}:{editing?:boolean}={}) {
             <div className="bs-des">
               <Image className="bs-draw" src={editing?"/img/actual/editing-blueprint.jpg":"/img/actual/portfolio-blueprint.jpg"} alt="" fill sizes="(max-width: 1680px) 100vw, 1584px" />
               <div className="wf-cols" aria-hidden="true">{Array.from({ length: 12 }, (_, i) => <span key={i} />)}</div>
-              <div className="wf-sel" style={box(HEAD)}><i /><i /><i /><i /><span className="wf-pill">Display · 356 × 72</span></div>
+              <div className="wf-sel" style={box(HEAD)}><i /><i /><i /><i /><span className="wf-pill">Homepage</span></div>
               <div className="wf-sel wf-sel-s" style={box(CTA)}><i /><i /><i /><i /></div>
               <div className="wf-rl" style={{ left: '91%', top: '64%', height: '26.2%' }}><b>236</b></div>
             </div>
