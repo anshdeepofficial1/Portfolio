@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 // who this site is about, for search engines and AI answers; keep it to what the pages themselves say
 
 
-export const viewport: Viewport = { themeColor: '#0C0C0B', colorScheme: 'dark' };
+export const viewport: Viewport = { themeColor: '#05070e', colorScheme: 'dark' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

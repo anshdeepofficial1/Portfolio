@@ -31,7 +31,7 @@ try{
  const row=p.locator('.project-row').first();await row.scrollIntoViewIfNeeded();
  await row.locator('.project-title').hover();if(await row.locator('.project-hover').count()!==1)throw Error('Hover missing');
  await row.locator('.preview-action').hover();if(await row.locator('.project-hover').count())throw Error('Preview overlays button');
- await row.locator('.preview-action').click();await p.locator('.lb.on').waitFor();if(await p.locator('.lb.on a[href="https://anidashgo.vercel.app/"]').count()!==1)throw Error('Preview destination wrong');await p.locator('.lb-top button').click();
+ await row.locator('.preview-action').click();await p.locator('.lb.on').waitFor();if(await p.locator('.lb.on a[href="https://anidashgo.vercel.app/"]').count()!==1)throw Error('Preview destination wrong');await p.locator('.lb-top button').click();await p.locator('.lb.on').waitFor({state:'detached'});
  await p.goto(base+'/coding',{waitUntil:'networkidle'});await p.waitForTimeout(4800);
  await p.screenshot({path:dir+'/portfolio.jpg',type:'jpeg',quality:94});
  execFileSync('python3',['scripts/normalize-preview.py',dir+'/portfolio.jpg',dir+'/portfolio-blueprint.jpg','blueprint']);
