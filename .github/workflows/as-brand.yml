@@ -8,6 +8,9 @@ on:
       - 'scripts/test-brand.mjs'
       - '.github/workflows/as-brand.yml'
   workflow_dispatch:
+concurrency:
+  group: as-brand-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
