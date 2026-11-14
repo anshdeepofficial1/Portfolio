@@ -18,11 +18,6 @@
     "label": "NOVA shell preview",
     "source": "https://github.com/anshdeepofficial1/NOVA"
   },
-  "iside": {
-    "label": "Preview unavailable",
-    "source": "https://github.com/anshdeepofficial1/iSide",
-    "unavailable": true
-  },
   "zylo": {
     "label": "Live website · sign-in required",
     "source": "https://zylod.vercel.app/home",
@@ -53,15 +48,6 @@
     "source": "https://socialboostweb.vercel.app/",
     "finalUrl": "https://socialboostweb.vercel.app/"
   },
-  "aboutme": {
-    "label": "Preview unavailable",
-    "source": "https://github.com/anshdeepofficial1/About-Me",
-    "unavailable": true
-  },
-  "todo": {
-    "label": "Repository preview",
-    "source": "https://github.com/anshdeepofficial1/To-Do-List"
-  },
   "fueltracker": {
     "label": "Repository preview",
     "source": "https://github.com/anshdeepofficial1/FuelTracker"
@@ -69,26 +55,6 @@
   "deepfake": {
     "label": "Repository preview",
     "source": "https://github.com/anshdeepofficial1/DEEPFAKE"
-  },
-  "payroll": {
-    "label": "Repository preview",
-    "source": "https://github.com/anshdeepofficial1/Employee-Payroll-Management-System"
-  },
-  "taskmanagement": {
-    "label": "Repository preview",
-    "source": "https://github.com/anshdeepofficial1/Task-Management-Website"
-  },
-  "weather": {
-    "label": "Repository preview",
-    "source": "https://github.com/anshdeepofficial1/Weather-data-analysis"
-  },
-  "airplane": {
-    "label": "Repository preview",
-    "source": "https://github.com/anshdeepofficial1/Airplane-Management-System"
-  },
-  "snake": {
-    "label": "Repository preview",
-    "source": "https://github.com/anshdeepofficial1/Snake-Game"
   },
   "socialboost-app": {
     "label": "Repository preview",
