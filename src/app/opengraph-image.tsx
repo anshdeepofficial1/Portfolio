@@ -17,7 +17,7 @@ export default function OG() {
           </div>
           <div style={{ fontSize: 28, color: '#FF4F2B' }}>anshdeepofficial1.vercel.app</div>
         </div>
-        <svg viewBox={AS_VIEWBOX} width={300} height={220} style={{position:'absolute',right:60,top:185}}>{AS_PATHS.map((d,i)=><path key={i} d={d} fill={i===0?'#153875':'#0753ff'}/>)}</svg>
+        <svg viewBox={AS_VIEWBOX} width={300} height={220} style={{position:'absolute',right:60,top:185}}><defs><linearGradient id="og-as" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#061024"/><stop offset=".53" stopColor="#061024"/><stop offset=".79" stopColor="#0644d8"/><stop offset="1" stopColor="#0753ff"/></linearGradient></defs>{AS_PATHS.map((d,i)=><path key={i} d={d} fill={i===0?'url(#og-as)':'#0753ff'} stroke="#315aab" strokeWidth={1}/>)}</svg>
       </div>
     ),
     size,
