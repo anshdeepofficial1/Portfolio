@@ -9,15 +9,10 @@ export const SOCIAL = [{name:'GitHub',href:'https://github.com/anshdeepofficial1
 export const NAV = [
   { key: 'work', label: 'Work', href: '/work' },
   { key: 'about', label: 'About', href: '/about' },
-  { key: 'resume', label: 'Resume', href: '/resume' },
+  { key: 'resume', label: 'Resume', href: '/resume/coding' },
   { key: 'contact', label: 'Contact', href: '/contact' },
 ] as const;
 
-// what happens after someone gets in touch: the contact page shows it before, the thanks page after
-export const NEXT_STEPS: [string, string][] = [
-  ['I read it and reply', 'Usually with a few questions about goals, timing and budget.'],
-  ['A clear scope and price', 'A clear plan and next steps.'],
-];
 
 
 

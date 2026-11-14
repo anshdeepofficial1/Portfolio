@@ -1,6 +1,5 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { Site } from './Site';
 import { Nav } from './Nav';
 import { PhoneMenu } from './PhoneMenu';
@@ -12,9 +11,8 @@ import { CaseViewer } from './CaseViewer';
 import { PerfHud } from './PerfHud';
 
 
-/** The site's chrome around every page, except the admin, which is a plain tool with none of it. */
+/** Shared portfolio navigation and animation shell. */
 export function SiteShell({ children }: { children: React.ReactNode }) {
-  if (usePathname().startsWith('/admin')) return children;
   return (
     <>
       <Site>

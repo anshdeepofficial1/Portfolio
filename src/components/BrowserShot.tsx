@@ -12,11 +12,7 @@ type Props = {
   drive?: 'rise';
 };
 
-/**
- * A client site shown as it is: the real screenshot in a plain browser window, standing in a dark stage and cropped
- * by its bottom edge. No drawing, no slash: most of this work was design only, and the slash says "drawn and built".
- * MockDrive moves the ones that ask for it and plays their loops.
- */
+/** Real project screenshot in a browser frame. */
 export function BrowserShot({ img, sizes, className, priority, url, alt, video, drive }: Props) {
   const a11y = alt ? { role: 'img', 'aria-label': alt } : { 'aria-hidden': true };
   return (

@@ -9,13 +9,13 @@ import { Arrow } from './Icons';
 import { Mark } from './Mark';
 import { useSite } from './Site';
 
-export const sectionOf = (path: string) => (path.startsWith('/work') ? 'work' : path.startsWith('/resume') ? 'resume' : path.startsWith('/editing') ? 'editing' : path.startsWith('/about') ? 'about' : path.startsWith('/thanks') || path.startsWith('/contact') ? 'contact' : '');
+export const sectionOf = (path: string) => (path.startsWith('/work') ? 'work' : (path.startsWith('/resume') || path.startsWith('/editing/resume')) ? 'resume' : path.startsWith('/editing') ? 'editing' : path.startsWith('/about') ? 'about' : path.startsWith('/thanks') || path.startsWith('/contact') ? 'contact' : '');
 
 export function Nav() {
   const path = usePathname();
   const cur = sectionOf(path);
   const editing=path.startsWith('/editing');
-  const links=editing?[{key:'work',label:'Work',href:'/editing#work'},{key:'about',label:'About',href:'/editing#experience'},{key:'resume',label:'Resume',href:'/resume'},{key:'contact',label:'Contact',href:'/editing#contact'}]:NAV;
+  const links=editing?[{key:'work',label:'Work',href:'/editing#work'},{key:'about',label:'About',href:'/editing#experience'},{key:'resume',label:'Resume',href:'/editing/resume'},{key:'contact',label:'Contact',href:'/editing#contact'}]:NAV;
   const { menu, setMenu } = useSite();
   const bg = useRef<HTMLDivElement>(null);
 
@@ -50,7 +50,7 @@ export function Nav() {
               </span>
             </Link>
           ))}
-          <Link className="nl variant-nav" href={editing?'/coding':'/editing'} data-cursor="link"><span className="roll" data-t={path.startsWith('/editing')?'Coding':'Editing'}><span>{path.startsWith('/editing')?'Coding':'Editing'}</span></span></Link>
+          <Link className="nl variant-nav" href={editing?'/coding':'/editing'} data-cursor="link"><span className="roll" data-t={editing?'Coding':'Editing'}><span>{editing?'Coding':'Editing'}</span></span></Link>
         </nav>
         <Link className="nav-cta" href={editing?"/editing#contact":"/contact"} data-cursor="link">
           Get in touch

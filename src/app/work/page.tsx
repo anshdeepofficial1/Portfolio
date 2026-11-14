@@ -1,13 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ALL_WORK, CLIENT, CONCEPTS, FILTERS, MORE, countFor } from '@/lib/work';
+import { ALL_WORK, CLIENT, FILTERS, MORE, countFor } from '@/lib/work';
 import { PageHead, SecHead } from '@/components/PageParts';
 import { Chips, FilterScope, Filtered } from '@/components/pages/Filter';
 import { ContactFooter } from '@/components/ContactFooter';
 import { BrowserShot } from '@/components/BrowserShot';
 import { MockDrive } from '@/components/MockDrive';
-import { CaseOpen } from '@/components/CaseViewer';
-import { ConceptScene } from '@/components/concept';
 import { Arrow } from '@/components/Icons';
 
 export const metadata: Metadata = {
@@ -17,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 // the address bar shows a real domain only where one is known; otherwise just the product's name
-const urlFor = (w: { ext: boolean; go: string; name: string; k: string }) => (w.ext ? w.go : w.k === 'wordsburg' ? 'wordsburg.com' : w.name);
+const urlFor = (w: { ext: boolean; go: string; name: string; k: string }) => (w.ext ? w.go : w.name);
 
 export default function WorkPage() {
   const total = String(ALL_WORK.length).padStart(2, '0');
@@ -41,9 +39,9 @@ export default function WorkPage() {
               <div className="wkf-t">
                 <p className="wkf-n mono"><span>{total} / {total}</span><span>Case study · included in total</span></p>
                 <h2 className="wkf-h">This site</h2>
-                <p className="lead">My portfolio, adapted from an MIT-licensed motion architecture.</p>
+                <p className="lead">My personal Coding and Editing portfolio, with a shared AS identity and interactive motion.</p>
                 <div className="tags">{['Identity', 'WebGL2', 'Next.js', 'GSAP'].map((t) => <span className="tag" key={t}>{t}</span>)}</div>
-                <p><Link className="lnk mono" href="/work/portfolio" data-cursor="link">Read the case<Arrow /></Link></p>
+                <p><Link className="lnk mono" href="/work/portfolio" data-cursor="link">Explore portfolio<Arrow /></Link></p>
               </div>
             </article>
             {CLIENT.map((w, i) => {

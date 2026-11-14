@@ -17,7 +17,7 @@ const ITEMS = [
   { key: 'editing', label: 'Editing', href: '/editing' },
   { key: 'work', label: 'Work', href: '/work' },
   { key: 'about', label: 'About', href: '/about' },
-  { key: 'resume', label: 'Resume', href: '/resume' },
+  { key: 'resume', label: 'Resume', href: '/resume/coding' },
 ];
 // Contact is left out: the Get in touch button under the list goes to the same page
 
@@ -25,7 +25,7 @@ export function PhoneMenu() {
   const { menu, setMenu } = useSite();
   const path = usePathname();
   const editing=path.startsWith('/editing');const cur = path === '/coding' || path==='/' ? 'home' : sectionOf(path);
- const items=ITEMS.map(it=>editing&&it.key==='work'?{...it,href:'/editing#work'}:editing&&it.key==='about'?{...it,href:'/editing#experience'}:it);
+ const items=ITEMS.map(it=>editing&&it.key==='work'?{...it,href:'/editing#work'}:editing&&it.key==='about'?{...it,href:'/editing#experience'}:editing&&it.key==='resume'?{...it,href:'/editing/resume'}:it);
   const box = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
