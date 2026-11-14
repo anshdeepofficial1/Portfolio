@@ -15,7 +15,7 @@
 .has-intro .ld{display:block;position:fixed;inset:0;z-index:300;pointer-events:none}
 .ld-bg{position:absolute;inset:0;background:var(--ink)}
 .ld-in{position:relative;height:min(100vh,900px)}
-.ld-mk{position:absolute;left:50%;top:50%;height:46%;width:auto;aspect-ratio:692/1024;transform:translate(-50%,-50%);overflow:visible}
+.ld-mk{position:absolute;left:50%;top:50%;height:46%;width:auto;aspect-ratio:1079/781;transform:translate(-50%,-50%);overflow:visible}
 .ld-gh path{fill:none;stroke:var(--bone);stroke-width:4;opacity:0}
 .ld-b,.ld-m{fill:var(--bone);fill-opacity:0;stroke:var(--bone);stroke-width:4}
 .ld-m{rotate:180deg}
@@ -178,7 +178,7 @@
 .wf-rl b{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-weight:500;font-size:max(9px,.9cqw);color:var(--red)}
 .bs-line{position:absolute;left:50%;top:0;z-index:4;width:130cqw;height:2px;background:var(--red);transform:translate(-50%,calc(var(--s) * (100cqh + 43.69cqw) - 21.85cqw - 50%)) rotate(-23.6deg);box-shadow:0 0 16px rgba(255,79,43,.6)}
 .bs-h{position:absolute;left:14%;top:0;z-index:5;width:64px;height:64px;border-radius:50%;background:var(--red);color:var(--ink);display:flex;align-items:center;justify-content:center;transform:translate(-50%,calc(var(--s) * (100cqh + 43.69cqw) - 21.85cqw + 15.73cqw - 50%));box-shadow:0 8px 32px rgba(0,0,0,.4)}
-.bs-h .dpm{height:32px;width:auto;aspect-ratio:692/1024}
+.bs-h .dpm{height:32px;width:auto;aspect-ratio:1079/781}
 
 /* services index: design and production */
 .both-foot{display:grid;grid-template-columns:1fr 1fr;margin-top:var(--blk-l);border-top:1px solid var(--line-2)}
@@ -419,3 +419,7 @@ button.row-a{padding:24px 0}
 .wkf-s .fl-shot{position:relative;display:block;aspect-ratio:16/10;border-radius:var(--r-m);overflow:hidden;box-shadow:0 0 0 1px var(--lp),0 32px 64px -40px rgba(12,12,11,.5)}
 button.lnk{background:none;border:0;border-bottom:1px solid var(--line-2);padding:0;font:inherit;color:inherit;cursor:pointer}
 
+
+/* A real AS silhouette replaces the old rotational monogram; motion timing remains. */
+.hero,.ld-bg{background:#000}.as-intro-mark{width:min(46vw,580px);height:auto;aspect-ratio:1079/781}.as-intro-outline,.as-intro-solid{position:absolute;inset:0;width:100%;height:100%}.as-intro-outline path{fill:none;stroke:#91b4ff;stroke-width:4;stroke-dasharray:100;stroke-dashoffset:100;animation:as-trace .8s var(--e-io) both}.as-intro-outline path:nth-child(2){animation-delay:.14s}.as-intro-outline path:nth-child(3){animation-delay:.24s}.as-intro-solid{opacity:0;animation:as-fill .6s var(--e-out) .75s both;filter:drop-shadow(0 0 1px #7b9de9)}.as-intro-label{font-size:22px}.has-intro .as-intro-mark{animation:ld-grow .8s var(--e-io) 2.2s both,ld-fade .25s ease 2.85s both}@keyframes as-trace{to{stroke-dashoffset:0}}@keyframes as-fill{to{opacity:1}}.hu-identity{display:flex;flex-direction:column;gap:14px;align-items:flex-start}.hu-name{display:flex;align-items:center;gap:10px}.hu-name .as-mark{height:23px;width:32px}.hero-variants{display:flex;align-items:center;gap:18px;font-size:13px;line-height:1.4;letter-spacing:-.015em}.hero-variants a{display:inline-flex;align-items:center;gap:7px;border-bottom:1px solid #6c758b;padding-bottom:5px;color:#b6c1d6;transition:color .25s,border-color .25s}.hero-variants a[aria-current=page]{color:#fff;border-color:#0753ff}.hero-variants a:hover{color:#91b4ff;border-color:#91b4ff}.hero-variants a span{font-family:monospace;font-size:10px;color:#7296e6}.hero-variants svg{width:12px;height:12px}.hu-top .hu-name{text-align:left}.as-con-fill{opacity:clamp(0,(var(--cp) - .72)*5,1)}@media(max-width:900px){.hu-identity{gap:9px}.hu-name .as-mark{height:18px;width:25px}.hero-variants{gap:12px;font-size:12px}.hu-top{gap:12px}.hu-top>p:last-child{font-size:10px}.as-intro-mark{width:min(70vw,440px)}}
+.hu-identity{min-width:0}.hu-name{white-space:normal}.hu-top>p{flex-shrink:0}.hu-top>p:last-child{max-width:45%}@media(max-width:370px){.hu-top>p:last-child{max-width:35%;font-size:9px}.hu-name .as-mark{display:none}.hero-variants{gap:10px}}

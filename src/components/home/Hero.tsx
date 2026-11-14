@@ -10,10 +10,11 @@ import { useRootFlag } from '../Site';
 import { lenis } from '../SmoothScroll';
 import { compileProgram } from '@/lib/webgl';
 import { CHAPTERS } from './chapters';
+import { Mark } from '../Mark';
 
 
 const VS = '#version 300 es\nin vec2 aPos;\nvoid main() { gl_Position = vec4(aPos, 0.0, 1.0); }';
-const UNIFORMS = ['uRes', 'uTime', 'uRo', 'uCam', 'uTan', 'uTun', 'uEnd', 'uKey', 'uAccent', 'uSteps'] as const;
+const UNIFORMS = ['uRes', 'uTime', 'uRo', 'uCam', 'uTan', 'uTun', 'uEnd', 'uKey', 'uAccent', 'uSteps', 'uLogo'] as const;
 type U = Record<(typeof UNIFORMS)[number], WebGLUniformLocation | null>;
 
 const S = 6.4;
@@ -111,7 +112,7 @@ export function Hero() {
     }
 
     let gl: WebGL2RenderingContext | null = null;
-    let res: { pr: WebGLProgram; buf: WebGLBuffer | null } | null = null;
+    let res: { pr: WebGLProgram; buf: WebGLBuffer | null; tex?: WebGLTexture } | null = null;
     let u = {} as U;
     const controller = new AbortController();
     let ready = false;
@@ -125,7 +126,7 @@ export function Hero() {
         cv.dataset.gpu = gpu;
         if (!force && /swiftshader|llvmpipe|softpipe|software|basic render/i.test(gpu)) throw new Error(`software renderer: ${gpu}`);
         // Fallback devices never download the shader. A separate chunk also lets the intro paint first.
-        const { TUNNEL_FS } = await import('./tunnelShader');
+        const [{ TUNNEL_FS }, { makeLogoTexture }] = await Promise.all([import('./tunnelShader'),import('./logoSdf')]);
         controller.signal.throwIfAborted();
         const pr = await compileProgram(gl, VS, TUNNEL_FS, controller.signal);
         if (controller.signal.aborted) { gl.deleteProgram(pr); return; }
@@ -140,6 +141,7 @@ export function Hero() {
         gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
         gl.useProgram(pr);
         UNIFORMS.forEach((n) => (u[n] = gl!.getUniformLocation(pr, n)));
+        res.tex=makeLogoTexture(gl);gl.uniform1i(u.uLogo,0);
         ready = true;
         t0 = performance.now();
       } catch (e) {
@@ -147,7 +149,7 @@ export function Hero() {
         console.warn('Tunnel unavailable, showing the still.', e);
         why(String((e as Error)?.message ?? e).slice(0, 60));
         setFail(true);
-        if (gl && res) { gl.deleteProgram(res.pr); gl.deleteBuffer(res.buf); res = null; }
+        if (gl && res) { gl.deleteProgram(res.pr); gl.deleteBuffer(res.buf); if(res.tex) gl.deleteTexture(res.tex); res = null; }
       }
     };
 
@@ -247,7 +249,7 @@ export function Hero() {
       gl.uniform1f(u.uTun, c.tun);
       gl.uniform1f(u.uEnd, c.end);
       gl.uniform3f(u.uKey, -0.6 + m.x * 0.7, 0.7 + m.y * 0.45, 0.8);
-      gl.uniform3f(u.uAccent, 0.62, 0.6, 0.57);
+      gl.uniform3f(u.uAccent, 0.08, 0.34, 1.0);
       gl.uniform1f(u.uSteps, 150);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       if (first) { first = false; setOn(true); }
@@ -280,7 +282,7 @@ export function Hero() {
       cv.removeEventListener('webglcontextlost', lost);
       // Free our resources but keep the context: React remounts effects in dev, and a canvas
       // whose context was force-lost hands back the same dead context on the next getContext().
-      if (gl && res) { gl.deleteProgram(res.pr); gl.deleteBuffer(res.buf); }
+      if (gl && res) { gl.deleteProgram(res.pr); gl.deleteBuffer(res.buf); if(res.tex) gl.deleteTexture(res.tex); }
     };
   }, []);
 
@@ -295,7 +297,7 @@ export function Hero() {
         </div>
         <div className="hu">
           <div className="hu-top">
-            <p className="mono">Anshdeep Singh · Developer</p>
+            <div className="hu-identity"><p className="mono hu-name"><Mark />Anshdeep Singh · Developer</p><nav className="hero-variants" aria-label="Portfolio variant"><Link href="/" aria-current="page"><span>01</span> Coding</Link><Link href="/editing"><span>02</span> Editing<Arrow/></Link></nav></div>
             <p className="mono">Punjab, India · <Clock /> GMT+5:30</p>
           </div>
           <div className="hu-d" aria-hidden="true"><span className="hl hl-d">I design it.</span></div>

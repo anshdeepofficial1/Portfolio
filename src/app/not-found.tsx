@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { D_PATH, P_PATH } from '@/lib/site';
+import { AS_PATHS } from '@/lib/brand';
 import { Social } from '@/components/Social';
 import { Arrow } from '@/components/Icons';
 
@@ -20,8 +20,7 @@ export default function NotFound() {
         <div className="nf-v gc-7-12" aria-hidden="true">
           <svg viewBox="-600 -600 1200 1200">
             <g className="g"><circle r="512" /><circle r="256" /><line x1="-600" y1="0" x2="600" y2="0" /><line x1="0" y1="-600" x2="0" y2="600" /></g>
-            <g className="hd"><path className="h" d={D_PATH} transform="translate(-150 -330) scale(.62)" /></g>
-            <g className="hp"><path className="h" d={P_PATH} transform="translate(150 330) scale(.62)" /></g>
+            <g transform="translate(-634 -619)">{AS_PATHS.map((d,i)=><path key={i} d={d} style={{fill:i===0?'#102d66':'#0753ff'}}/>)}</g>
             <line className="r" x1="-700" y1="306" x2="700" y2="-306" />
           </svg>
           <span className="nf-n">404</span>

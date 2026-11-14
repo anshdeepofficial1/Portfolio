@@ -1,4 +1,4 @@
-// Raymarched d/p tunnel. Ported verbatim from design/generators/tunnel_fs.glsl.
+// Original raymarched scroll tunnel, adapted to the owner's AS silhouette.
 export const TUNNEL_FS = `#version 300 es
 precision highp float;
 out vec4 fragColor;
@@ -12,28 +12,15 @@ uniform float uEnd;
 uniform vec3 uKey;
 uniform vec3 uAccent;
 uniform float uSteps;
+uniform sampler2D uLogo;
 const float S = 6.4;
 const float NM = 13.0;
 const float STEP = 0.2617994;
 const float gH = 0.17;
 const float gR = 0.014;
 const float KS = 7.0;
-const vec2 V[11] = vec2[11](
-  vec2(0.000000,0.976563), vec2(-0.302734,0.820313), vec2(-0.644531,0.126953), vec2(-0.644531,-0.341797), vec2(-0.433594,-0.488281), vec2(-0.195313,-0.371094), vec2(-0.195313,-0.160156), vec2(-0.390625,-0.230469), vec2(-0.458984,-0.136719), vec2(-0.195313,0.410156), vec2(0.000000,0.498047));
-float sdPoly(vec2 p) {
-  float d = dot(p - V[0], p - V[0]);
-  float s = 1.0;
-  for (int i = 0, j = 10; i < 11; j = i, i++) {
-    vec2 e = V[j] - V[i];
-    vec2 w = p - V[i];
-    vec2 b = w - e * clamp(dot(w, e) / dot(e, e), 0.0, 1.0);
-    d = min(d, dot(b, b));
-    bvec3 c = bvec3(p.y >= V[i].y, p.y < V[j].y, e.x * w.y > e.y * w.x);
-    if (all(c) || all(not(c))) s *= -1.0;
-  }
-  return s * sqrt(d);
-}
-float sdLogo(vec2 p) { return min(sdPoly(p), sdPoly(-p)); }
+vec3 logoSample(vec2 p) { return texture(uLogo, clamp(p / 2.2 + .5, vec2(0.0), vec2(1.0))).rgb; }
+float sdLogo(vec2 p) { vec3 v=logoSample(p); return ((v.r * 65280.0 + v.g * 255.0) / 65535.0 * 2.0 - 1.0) * 1.6; }
 mat2 rot2(float a) { float c = cos(a), s = sin(a); return mat2(c, s, -s, c); }
 // returns distance; id = mark index; lq = local xy; lz = local z
 float mapT(vec3 p, out float id, out vec2 lq, out float lz) {
@@ -120,7 +107,8 @@ void main() {
     vec3 n = calcNormal(p);
     float idh; vec2 qh; float zh;
     mapT(p, idh, qh, zh);
-    vec3 alb = vec3(0.82, 0.80, 0.755);
+    float blue=max(logoSample(qh).b,smoothstep(.05,.43,qh.x));
+    vec3 alb = mix(vec3(.055,.095,.21),vec3(.025,.24,.97),blue);
     // key: point light riding with the camera
     vec3 Lp = ro + uKey;
     vec3 L = Lp - p; float ld = length(L); L /= ld;
@@ -139,7 +127,7 @@ void main() {
     float wall = smoothstep(0.11, 0.09, sl) * smoothstep(0.06, 0.075, sl) * smoothstep(0.62, 0.5, along) * side;
     col = mix(col, uAccent * 1.6, wall * 0.85);
     // thin accent rim on the other side faces
-    col += uAccent * side * 0.06;
+    col += uAccent * (side * .10 + .025);
     float vis = idh < 0.5 ? 1.0 : uTun;
     col *= vis;
     float spec = pow(max(dot(reflect(-L, n), -rd), 0.0), 36.0);
@@ -188,8 +176,8 @@ void main() {
   col = pow(col, vec3(1.0 / 2.2));
   vec2 uv = frag / uRes - 0.5;
   col *= 1.0 - 0.5 * dot(uv, uv);
-  col = max(col, vec3(0.047, 0.047, 0.043));
-  col += (hash(frag + fract(uTime * 0.37) * 91.0) - 0.5) * 0.03;
+  col = max(col, vec3(0.0));
+  if (hit) col += (hash(frag + fract(uTime * 0.37) * 91.0) - 0.5) * .015;
   fragColor = vec4(col, 1.0);
 }`;
 

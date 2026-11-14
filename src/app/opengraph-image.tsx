@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-import { D_PATH, MARK_VB, P_PATH } from '@/lib/site';
+import { AS_PATHS, AS_VIEWBOX } from '@/lib/brand';
 
 export const alt = 'Anshdeep Singh. I design it. I build it.';
 export const size = { width: 1200, height: 630 };
@@ -17,10 +17,7 @@ export default function OG() {
           </div>
           <div style={{ fontSize: 28, color: '#FF4F2B' }}>anshdeepofficial1.vercel.app</div>
         </div>
-        <svg viewBox={MARK_VB} width={300} height={444} style={{ position: 'absolute', right: 96, top: 93 }}>
-          <path d={D_PATH} fill="#ECEAE4" />
-          <path d={P_PATH} fill="#ECEAE4" />
-        </svg>
+        <svg viewBox={AS_VIEWBOX} width={300} height={220} style={{position:'absolute',right:60,top:185}}><defs><linearGradient id="og-as" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#061024"/><stop offset=".53" stopColor="#061024"/><stop offset=".79" stopColor="#0644d8"/><stop offset="1" stopColor="#0753ff"/></linearGradient></defs>{AS_PATHS.map((d,i)=><path key={i} d={d} fill={i===0?'url(#og-as)':'#0753ff'} stroke="#315aab" strokeWidth={1}/>)}</svg>
       </div>
     ),
     size,

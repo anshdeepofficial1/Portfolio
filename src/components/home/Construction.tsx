@@ -6,15 +6,15 @@ import { CON_SVG } from './constructionSvg';
 
 // The full build, for the case study about this site: four beats over 420svh.
 const CARDS = [
-  ['cc-tl', 0, 0.25, 'Start from a pivot', 'Every mark needs a centre it can turn around. Two angular halves share the same centre.'],
-  ['cc-br', 0.25, 0.5, '23.6°, everywhere', 'The slash sets one angle. Every cut, band and transition on this site borrows it.'],
-  ['cc-bl', 0.5, 0.75, 'Eleven points', 'Each half is eleven points. Turn one 180° around the pivot and it lands as the other.'],
+  ['cc-tl', 0, 0.25, 'Start from a pivot', 'The AS monogram starts with the angular A and the flowing S.'],
+  ['cc-br', 0.25, 0.5, 'Angles and curves', 'The angular A meets the rounded S, with clean negative space between the forms.'],
+  ['cc-bl', 0.5, 0.75, 'The AS outline', 'Three shapes define the complete monogram. Their outlines are drawn before the colour fills in.'],
   ['cc-tr', 0.75, 1.2, 'Drawn, then built', 'The lines become a solid, the same way a file becomes a product.'],
 ] as const;
 const LABELS = [['Pivot', 0, 0.25], ['Angle', 0.25, 0.5], ['Outline', 0.5, 0.75], ['Form', 0.75, 1.2]] as const;
 // On home it is one beat between the work and Both Sides: two captions over 180svh, so the work stays close to the hero.
 const SHORT_CARDS = [
-  ['cc-tl', 0, 0.5, 'One angle, eleven points', 'The two halves turn around a shared pivot. The slash sets one angle, 23.6°, and every cut on this site borrows it.'],
+  ['cc-tl', 0, 0.5, 'One mark. Two initials.', 'The angular A and flowing S form my personal identity. Drawn in navy and electric blue.'],
   ['cc-br', 0.5, 1.2, 'Drawn, then built', 'The lines become a solid, the same way a file becomes a product.'],
 ] as const;
 const SHORT_LABELS = [['Angle', 0, 0.5], ['Form', 0.5, 1.2]] as const;
@@ -54,7 +54,7 @@ export function Construction({ full = false, label = '03 · The mark, constructe
   return (
     <div className={`con-wrap${full ? '' : ' con-short'}`} ref={wrap}>
       <section className="con" ref={con} aria-labelledby="con-h">
-        <h2 className="sr" id="con-h">The mark, constructed: a pivot, one angle, eleven points, then a solid.</h2>
+        <h2 className="sr" id="con-h">The mark, constructed: the AS monogram, from outline to solid.</h2>
         <svg className="con-svg" viewBox="-1450 -905 2900 1810" preserveAspectRatio="xMidYMid slice" aria-hidden="true" dangerouslySetInnerHTML={{ __html: CON_SVG }} />
         {cards.map(([cls, a, b, h, p]) => (
           <div className={`cc ${cls}`} style={v(a, b)} key={cls}>

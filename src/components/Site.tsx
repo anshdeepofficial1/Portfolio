@@ -24,7 +24,7 @@ export function useRootFlag(name: string, on: boolean) {
 // The intro plays once per visit: the first home render, never again after a client-side navigation. A visitor who
 // saw it in the last day skips it (layout.tsx marks <html> with intro-seen before first paint).
 let introPlayed = false;
-const markSeen = () => { try { localStorage.setItem('dp-intro', String(Date.now())); } catch { /* private mode */ } };
+const markSeen = () => { try { localStorage.setItem('as-intro-v1', String(Date.now())); } catch { /* private mode */ } };
 
 export function Site({ children }: { children: React.ReactNode }) {
   const path = usePathname();
