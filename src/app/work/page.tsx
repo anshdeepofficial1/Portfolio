@@ -79,7 +79,7 @@ export default function WorkPage() {
               {MORE.map((w, i) => (
                 <Filtered k={w.fil} key={w.k}>
                   <article className="wkm-c">
-                    <BrowserShot img={w.img} url={urlFor(w)} alt={`${w.name} ${w.previewLabel}`} sizes="(max-width: 900px) 100vw, 50vw" drive="rise" />
+                    {w.previewUnavailable ? <div className="bw" style={{display:"grid",placeItems:"center",minHeight:180,padding:24,textAlign:"center"}}><p className="mono">No public preview available</p></div> : <BrowserShot img={w.img} url={urlFor(w)} alt={`${w.name} ${w.previewLabel}`} sizes="(max-width: 900px) 100vw, 50vw" drive="rise" />}
                     <div className="wkm-r"><h3>{w.name}</h3><span className="mono mute">{String(i + CLIENT.length + 1).padStart(2,'0')} / {total}</span></div>
                     <p className="mono">{w.cat} · {w.previewLabel}</p>
                     <p>{w.desc}</p><a className="lnk mono" href={w.href} target="_blank" rel="noopener">Open project<Arrow /></a>

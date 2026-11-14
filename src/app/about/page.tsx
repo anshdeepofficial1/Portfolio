@@ -27,12 +27,12 @@ const STEPS = [
   ['ps-x ps-p', 'p', 'Launch', 'Performance, analytics and handover docs. Then I stay on call.'],
 ];
 const TD = ['UI/UX','Prototyping','Video editing','Motion design'];
-const TP = ['HTML','CSS','JavaScript','React','Flutter','Dart','Python','SQL','Rust','Vercel'];
+const TP = ['HTML','CSS','JavaScript','TypeScript','Tailwind CSS','React','Flutter','Dart','Python','SQL','MySQL','Rust','GitHub','Vercel'];
 
 const Ext = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a className="lnk mono" href={href} target="_blank" rel="noopener" data-cursor="link">{children}<Arrow /></a>
 );
-const XP: [React.ReactNode,string,React.ReactNode,React.ReactNode][] = [['2024 – 2027','BCA (Hons. with Research)','Data Science · Chandigarh University',<Ext href="/RESUME.pdf">Résumé</Ext>],['2026','Web Development Intern','AniWebDesigns Pvt. Ltd. · Mohali',null],['Ongoing','Independent developer','Apps, websites and creative projects',<Ext href="https://github.com/anshdeepofficial1">GitHub</Ext>]];
+const XP: [React.ReactNode,string,React.ReactNode,React.ReactNode][] = [['2024 – 2027','BCA (Hons. with Research)','Data Science · Chandigarh University',<Ext href="/resume">Résumé</Ext>],['2026','Web Development Intern','AniWebDesigns Pvt. Ltd. · Mohali',null],['Ongoing','Independent developer','Apps, websites and creative projects',<Ext href="https://github.com/anshdeepofficial1">GitHub</Ext>]];
 const tags = (L: string[]) => <div className="tags">{L.map((t) => <span className="tag" key={t}>{t}</span>)}</div>;
 
 export default function AboutPage() {

@@ -1,10 +1,10 @@
 import { chromium } from 'playwright';
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 const targets=JSON.parse(await readFile('scripts/preview-targets.json','utf8'));
 const dir='public/img/actual'; await mkdir(dir,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
-const manifest={};
+const manifest=JSON.parse(await readFile('src/lib/preview-manifest.json','utf8'));
 async function shot(url,out) {
  const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1,ignoreHTTPSErrors:false});
  try{
@@ -26,6 +26,7 @@ async function image(url,out){
 }
 async function captureTarget(t){
  const out=dir+'/'+t.k+'.jpg';
+ if(t.k!=='nova'&&manifest[t.k]&&!manifest[t.k].unavailable){try{await access(out);return;}catch{}}
  try{
   if(t.sourceImg){await image(t.sourceImg,out);manifest[t.k]={label:t.previewLabel,source:t.sourceImg};return;}
   if(t.k==='nova'){
