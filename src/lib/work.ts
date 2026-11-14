@@ -1,6 +1,6 @@
-export type Work={k:string;name:string;cat:string;fil:string;desc:string;short:string;tags:string[];href:string;go:string;ext:boolean;img:string;fig?:string;video?:string;concept?:boolean;scene?:boolean;github?:string;previewLabel?:string;sourceImg?:string};
+export type Work={k:string;name:string;cat:string;fil:string;desc:string;short:string;tags:string[];href:string;go:string;ext:boolean;img:string;fig?:string;video?:string;concept?:boolean;scene?:boolean;github?:string;previewLabel?:string;sourceImg?:string;previewUnavailable?:boolean};
 export const FILTERS=[{"key":"all","label":"All"},{"key":"app","label":"Apps"},{"key":"web","label":"Web"},{"key":"systems","label":"Systems"},{"key":"creative","label":"Creative"}] as const;
-export const CLIENT:Work[]=[
+const selected:Work[]=[
   {
     "k": "anidash",
     "name": "AniDash",
@@ -101,7 +101,7 @@ export const CLIENT:Work[]=[
     "previewLabel": "Repository / shell preview"
   }
 ];
-export const MORE:Work[]=[
+const remaining:Work[]=[
   {
     "k": "pitchcraft",
     "name": "Pitchcraft",
@@ -397,6 +397,11 @@ export const MORE:Work[]=[
     "sourceImg": ""
   }
 ];
+import previewManifest from './preview-manifest.json';
+const captures=previewManifest as Record<string,{label:string;source:string;unavailable?:boolean}>;
+const withCapture=(w:Work):Work=>({...w,previewLabel:captures[w.k]?.label || w.previewLabel,previewUnavailable:captures[w.k]?.unavailable});
+export const CLIENT=selected.map(withCapture);
+export const MORE=remaining.map(withCapture);
 export const CONCEPTS:Work[]=[];
 export const WORK=CLIENT;
 export const ALL_WORK=[...CLIENT,...MORE];
