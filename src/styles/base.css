@@ -300,3 +300,7 @@ a:hover .bw-view img,button:hover .bw-view img{scale:1.03}
 
 /* AS palette: stable brand colours, never difference-blend the pointer over artwork. */
 .cursor{mix-blend-mode:normal!important;color:#fff}.cur-dot{background:transparent;border:1.5px solid #4c82ff;box-shadow:0 0 0 1px #05070e80;border-radius:50%;transform:none}.cursor[data-mode="link"] .cur-dot{width:28px;height:28px;opacity:1}.cursor[data-mode="view"] .cur-dot{width:30px;height:30px}.cursor[data-mode="read"] .cur-dot,.cursor[data-mode="scrub"] .cur-dot{background:#0753ff25;border:1px solid #79a3ff}.cur-lbl{color:#fff;text-shadow:0 1px 4px #000}.cursor[data-mode="brand"]{opacity:0}.site .brand,.site .brand *,.site .as-mark{cursor:auto}.nav .brand{cursor:pointer}.btn:hover{color:#fff}.sl-h,.bs-h{color:white}.nav-bg.on{background:linear-gradient(#05070ef5,#0d1424d9 65%,transparent)}.ptx-p{background:#0d1424;color:#e9f1ff}.as-mark{isolation:isolate;mix-blend-mode:normal}.ct-glow{background:radial-gradient(48% 62% at var(--gx,50%) 100%,#0753ff88,#0753ff30 42%,#0753ff0f 66%,transparent 82%)}
+
+/* Hide the viewport scrollbar without disabling native scrolling or Lenis. */
+html,body{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}

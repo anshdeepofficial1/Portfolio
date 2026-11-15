@@ -2,6 +2,14 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 try {
+ // Check both routes with classic desktop scrollbars enabled.
+ const scrollPage=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});
+ for(const route of ['/coding','/editing']){
+  await scrollPage.goto('http://127.0.0.1:3000'+route,{waitUntil:'networkidle'});
+  const state=await scrollPage.evaluate(()=>{const root=document.scrollingElement;window.scrollTo({top:400,behavior:'instant'});return {style:getComputedStyle(root).scrollbarWidth,scroll:window.scrollY,fullWidth:root.clientWidth===innerWidth,scrollable:root.scrollHeight>innerHeight};});
+  assert.equal(state.style,'none',route+' scrollbar');assert(state.scrollable&&state.scroll>0,route+' scroll disabled');assert(state.fullWidth,route+' scrollbar gutter');console.log(route,'scrollbar hidden; scrolling works',state);
+ }
+ await scrollPage.close();
  for(const viewport of [{width:1833,height:806},{width:390,height:844}]){
   const page=await browser.newPage({viewport,reducedMotion:'reduce'});
   await page.goto('http://127.0.0.1:3000/editing',{waitUntil:'networkidle'});
