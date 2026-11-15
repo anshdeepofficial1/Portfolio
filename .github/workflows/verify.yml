@@ -9,14 +9,17 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22'
       - name: Install
-        run: npm install
+        run: |
+          npm install
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
       - name: Render previews from original PDFs
         run: |
           sudo apt-get update -qq
@@ -31,3 +34,4 @@ jobs:
           npm run start -- --hostname 127.0.0.1 > /tmp/portfolio.log 2>&1 &
           for i in $(seq 1 30); do if curl -fsSL http://127.0.0.1:3000/coding >/dev/null; then break; fi; sleep 2; done
           node scripts/verify-portfolio.mjs
+          node scripts/verify-editing-layout.mjs
