@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { Fragment } from 'react';
+import Link from 'next/link';
+import { BIO, PROFILE_JSON_LD, safeJsonLd } from '@/lib/structuredData';
+import { SOCIAL, EDIT_LINKEDIN } from '@/lib/site';
 import {ALL_WORK,FILTERS} from '@/lib/work';
 import { SecHead } from '@/components/PageParts';
 import { Mark } from '@/components/Mark';
@@ -8,7 +11,7 @@ import { Arrow } from '@/components/Icons';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Anshdeep Singh, developer, interface designer and BCA Data Science student.',
+  description: BIO,
   alternates: { canonical: '/about' },
 };
 
@@ -29,12 +32,13 @@ export default function AboutPage() {
   return (
     <>
       <main>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: safeJsonLd(PROFILE_JSON_LD)}} />
         <section className="ab-h wrap" aria-labelledby="ph-h">
           <div className="ab-g grid">
             <h1 className="ab-t t-d1 gc-1-8" id="ph-h"><span>One person,</span><span className="wide">both sides</span><span>of the line.</span></h1>
           </div>
           <div className="ab-in grid">
-            <p className="gc-1-6">I’m Anshdeep Singh, a BCA Data Science undergraduate at Chandigarh University. I build apps, websites and practical tools, combining front-end development, interface design and SQL. My coding portfolio includes Android apps, web applications, data tools and operating system experiments.</p>
+            <p className="gc-1-6">I’m Anshdeep Singh (anshdeepofficial1), a software developer, independent video editor and BCA Data Science undergraduate at Chandigarh University. I build apps, websites and practical tools, combining front-end development, interface design and SQL. My coding portfolio includes Android apps, web applications, data tools and operating system experiments.</p>
           </div>
         </section>
         <section className="ab-f on-bone" aria-label="At a glance">
@@ -108,6 +112,15 @@ export default function AboutPage() {
             </div>
           </section>
         </div>
+        <section className="wk" aria-labelledby="official-links">
+          <div className="wrap">
+            <SecHead n="05" label="Official profiles" id="official-links" />
+            <h2 className="t-d2">Find Anshdeep Singh online.</h2>
+            <p className="lead">Explore my official public profiles and project directory.</p>
+            <p>{SOCIAL.map(s => <span key={s.name}><Ext href={s.href}>{s.name}</Ext>{' · '}</span>)}<Ext href={EDIT_LINKEDIN}>Editing LinkedIn</Ext></p>
+            <p><Link className="lnk mono" href="/work">All software projects<Arrow/></Link>{' · '}<Link className="lnk mono" href="/editing">Video editing portfolio<Arrow/></Link></p>
+          </div>
+        </section>
       </main>
       <ContactFooter />
     </>

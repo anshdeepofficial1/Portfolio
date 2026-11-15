@@ -55,7 +55,7 @@ export default function WorkPage() {
                     </L>
                     <div className="wkf-t">
                       <p className="wkf-n mono"><span>{String(i + 1).padStart(2,"0")} / {total}</span><span>{w.cat} · {w.previewLabel}</span></p>
-                      <h2 className="wkf-h">{w.name}</h2>
+                      <h2 className="wkf-h"><Link href={`/projects/${w.k}`}>{w.name}</Link></h2>
                       <p className="lead">{w.desc}</p>
                       {w.features&&<ul className="project-features">{w.features.map(feature=><li key={feature}>{feature}</li>)}</ul>}<div className="tags">{w.tags.map((t) => <span className="tag" key={t}>{t}</span>)}</div>
                       <p><L className="lnk mono" href={w.href} {...ext} data-cursor="link">{w.href.includes("github.com") ? "Repository" : "Visit website"}<Arrow /></L>{w.github && w.github!==w.href && <a className="lnk mono" style={{marginLeft:20}} href={w.github} target="_blank" rel="noopener">GitHub<Arrow/></a>}</p>
@@ -78,7 +78,7 @@ export default function WorkPage() {
                 <Filtered k={w.fil} key={w.k}>
                   <article className="wkm-c">
                     {w.previewUnavailable ? <div className="bw" style={{display:"grid",placeItems:"center",minHeight:180,padding:24,textAlign:"center"}}><p className="mono">Repository source available · no screenshot published</p></div> : <BrowserShot img={w.img} url={urlFor(w)} alt={`${w.name} ${w.previewLabel}`} sizes="(max-width: 900px) 100vw, 50vw" drive="rise" />}
-                    <div className="wkm-r"><h3>{w.name}</h3><span className="mono mute">{String(i + CLIENT.length + 2).padStart(2,'0')} / {total}</span></div>
+                    <div className="wkm-r"><h3><Link href={`/projects/${w.k}`}>{w.name}</Link></h3><span className="mono mute">{String(i + CLIENT.length + 2).padStart(2,'0')} / {total}</span></div>
                     <p className="mono">{w.cat} · {w.previewLabel}</p>
                     <p>{w.desc}</p>{w.features&&<ul className="project-features">{w.features.map(feature=><li key={feature}>{feature}</li>)}</ul>}<div className="tags">{w.tags.map(t=><span className="tag" key={t}>{t}</span>)}</div><div className="repo-actions"><a className="lnk mono" href={w.href} target={w.ext?"_blank":undefined} rel="noopener">{w.href.includes("github.com")?"Open repository":"Visit website"}<Arrow /></a>{w.github&&w.github!==w.href&&<a className="lnk mono" href={w.github} target="_blank" rel="noopener">GitHub<Arrow/></a>}</div>
                   </article>

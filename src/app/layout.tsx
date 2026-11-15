@@ -7,15 +7,19 @@ import '@/styles/pages.css';
 import { INTRO_NOSCRIPT_CSS, INTRO_SEEN_SCRIPT } from '@/lib/intro';
 import { SiteShell } from '@/components/SiteShell';
 import { SITE_URL } from '@/lib/site';
-import { JSON_LD } from '@/lib/structuredData';
+import { BIO, JSON_LD, safeJsonLd } from '@/lib/structuredData';
 
 const archivo = Archivo({ subsets: ['latin'], axes: ['wdth'], variable: '--font-archivo', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'Anshdeep Singh · Developer & interface designer', template: '%s · Anshdeep Singh' },
-  description: 'BCA Data Science student at Chandigarh University. Apps, websites and practical tools.',
-  openGraph: { type: 'website', siteName: 'Anshdeep Singh', locale: 'en_US' },
+  title: { default: 'Anshdeep Singh — Software Developer & Video Editor', template: '%s · Anshdeep Singh' },
+  description: BIO,
+  authors: [{ name: 'Anshdeep Singh', url: SITE_URL + '/about' }],
+  creator: 'Anshdeep Singh',
+  publisher: 'Anshdeep Singh',
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
+  openGraph: { type: 'website', siteName: 'Anshdeep Singh', locale: 'en_IN', title: 'Anshdeep Singh — Software Developer & Video Editor', description: BIO },
   twitter: { card: 'summary_large_image' },
 };
 
@@ -30,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: INTRO_SEEN_SCRIPT }} />
         <noscript><style dangerouslySetInnerHTML={{ __html: INTRO_NOSCRIPT_CSS }} /></noscript>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON_LD }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(JSON_LD) }} />
       </head>
       <body>
         <SiteShell>{children}</SiteShell>

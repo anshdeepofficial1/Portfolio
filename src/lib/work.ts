@@ -137,6 +137,15 @@ const selected:Work[]=[
 ];
 const remaining:Work[]=[
   {
+    k: 'copycloud-app', name: 'CopyCloud App', cat: 'Android connectivity alpha', fil: 'app',
+    desc: 'Early-development native Android and Windows companion for opt-in clipboard and text transfer on a trusted local network. Not a production-ready release.',
+    short: 'Early-development Android and Windows companion for local clipboard and text transfer.',
+    tags: ['Kotlin', 'Jetpack Compose', 'Python'],
+    href: 'https://github.com/anshdeepofficial1/CopyCloud-APP', go: 'github.com', ext: true, img: '', github: 'https://github.com/anshdeepofficial1/CopyCloud-APP',
+    previewLabel: 'Early development alpha', previewUnavailable: true,
+    features: ['Native Android interface', 'Authenticated local text transfer', 'Opt-in clipboard bridge', 'Windows companion']
+  },
+  {
     "k": "nova",
     "name": "NOVA OS",
     "cat": "Experimental operating system",
