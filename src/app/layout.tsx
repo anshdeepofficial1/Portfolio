@@ -7,7 +7,7 @@ import '@/styles/pages.css';
 import { INTRO_NOSCRIPT_CSS, INTRO_SEEN_SCRIPT } from '@/lib/intro';
 import { SiteShell } from '@/components/SiteShell';
 import { SITE_URL } from '@/lib/site';
-import { BIO, JSON_LD, safeJsonLd } from '@/lib/structuredData';
+import { JSON_LD, safeJsonLd } from '@/lib/structuredData';
 
 const archivo = Archivo({ subsets: ['latin'], axes: ['wdth'], variable: '--font-archivo', display: 'swap' });
 
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   verification: { google: 'zUIv4rZus97oBoL6cnrCNeKngCIuHRzdncwD9e0eDRw' },
   title: { default: 'Anshdeep Singh — Software Developer & Video Editor', template: '%s · Anshdeep Singh' },
-  description: BIO,
+  description: 'Anshdeep Singh is a software developer and video editor studying Data Science at Chandigarh University. Explore his apps, websites and creative work.',
   authors: [{ name: 'Anshdeep Singh', url: SITE_URL + '/about' }],
   creator: 'Anshdeep Singh',
   publisher: 'Anshdeep Singh',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },
-  openGraph: { type: 'website', siteName: 'Anshdeep Singh', locale: 'en_IN', title: 'Anshdeep Singh — Software Developer & Video Editor', description: BIO },
+  openGraph: { type: 'website', siteName: 'Anshdeep Singh', locale: 'en_IN', title: 'Anshdeep Singh — Software Developer & Video Editor', description: 'Explore Anshdeep Singh’s software projects, video editing portfolio and professional background at Chandigarh University.' },
   twitter: { card: 'summary_large_image' },
 };
 

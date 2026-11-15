@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { BIO, PROFILE_JSON_LD, safeJsonLd } from '@/lib/structuredData';
+import { PROFILE_JSON_LD, safeJsonLd } from '@/lib/structuredData';
 import { SOCIAL, EDIT_LINKEDIN } from '@/lib/site';
 import {ALL_WORK,FILTERS} from '@/lib/work';
 import { SecHead } from '@/components/PageParts';
@@ -10,8 +10,8 @@ import { ContactFooter } from '@/components/ContactFooter';
 import { Arrow } from '@/components/Icons';
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: BIO,
+  title: 'About Me — Developer and Video Editor',
+  description: 'Meet Anshdeep Singh, a software developer, video editor and Data Science student at Chandigarh University. Explore his background and official profiles.',
   alternates: { canonical: '/about' },
 };
 

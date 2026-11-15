@@ -19,7 +19,8 @@ export async function generateMetadata({params}:Props):Promise<Metadata> {
   if(!w) return {};
   const path='/projects/'+w.k;
   const title=w.name+' — Project by '+PERSON_NAME;
-  return { title:{absolute:title}, description:w.desc, alternates:{canonical:path}, openGraph:{type:'website',title,description:w.desc,url:path, ...(w.img ? {images:[w.img]} : {})} };
+  const description = w.desc.length <= 155 ? w.desc : w.short.length <= 155 ? w.short : w.desc.slice(0, 155).replace(/\s+\S*$/, '') + '…';
+  return { title:{absolute:title}, description, alternates:{canonical:path}, openGraph:{type:'website',title,description,url:path, ...(w.img ? {images:[w.img]} : {})} };
 }
 export default async function ProjectPage({params}:Props) {
   const w=getProject((await params).slug);

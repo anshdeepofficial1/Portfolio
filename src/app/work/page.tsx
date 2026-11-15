@@ -9,8 +9,8 @@ import { MockDrive } from '@/components/MockDrive';
 import { Arrow } from '@/components/Icons';
 
 export const metadata: Metadata = {
-  title: 'Work',
-  description: 'Apps, websites, systems and creative projects by Anshdeep Singh.',
+  title: 'Software Projects and Applications',
+  description: 'Explore software projects by Anshdeep Singh, including AniDash, VYBE, CopyCloud, ZYLO, Android applications, web tools and systems experiments.',
   alternates: { canonical: '/work' },
 };
 
