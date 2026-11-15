@@ -13,6 +13,7 @@ const archivo = Archivo({ subsets: ['latin'], axes: ['wdth'], variable: '--font-
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  verification: { google: 'zUIv4rZus97oBoL6cnrCNeKngCIuHRzdncwD9e0eDRw' },
   title: { default: 'Anshdeep Singh — Software Developer & Video Editor', template: '%s · Anshdeep Singh' },
   description: BIO,
   authors: [{ name: 'Anshdeep Singh', url: SITE_URL + '/about' }],
