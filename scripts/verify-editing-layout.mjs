@@ -9,10 +9,10 @@ try {
   await page.locator('.site:not(.has-intro)').waitFor({state:'attached',timeout:15000});
   // Verify the real fallback first, then simulate the pinned WebGL layout without software raymarching.
   for(const pinned of [false,true]){
-   if(pinned)await page.evaluate(()=>{document.querySelector('.site').classList.remove('gl-fail');document.querySelector('.site').classList.add('gl-on');document.querySelector('.hero').style.setProperty('--p','1');});
+   if(pinned){await page.emulateMedia({reducedMotion:'no-preference'});await page.evaluate(()=>{document.querySelector('.site').classList.remove('gl-fail');document.querySelector('.site').classList.add('gl-on');document.querySelector('.hero').style.setProperty('--p','1');});}
    const result=await page.evaluate(async()=>{
     const bio=document.querySelector('.editing-bio'),hero=document.querySelector('.hero-wrap'),title=bio.querySelector('h2'),lead=bio.querySelector('.lead');
-    const bounds=()=>{const r=bio.getBoundingClientRect(),h=hero.getBoundingClientRect();return {gap:r.top-h.bottom,margin:getComputedStyle(hero).marginBottom}};
+    const bounds=()=>{const r=bio.getBoundingClientRect(),h=hero.getBoundingClientRect();return {gap:r.top-h.bottom,margin:getComputedStyle(hero).marginBottom,position:getComputedStyle(hero.querySelector('.hero')).position,story:getComputedStyle(document.querySelector('.story')).display}};
     const gap=bounds();
     window.scrollTo({top:window.scrollY+title.getBoundingClientRect().top-150,behavior:'instant'});
     await new Promise(r=>setTimeout(r,250));
@@ -21,6 +21,7 @@ try {
    });
    console.log(viewport,pinned?'pinned':'fallback',result);
    assert.equal(result.margin,'0px');
+   if(pinned){assert.equal(result.position,'sticky');assert.equal(result.story,'none');assert(Math.abs(result.gap)<2,'Unexpected gap at pinned exit');}
    assert(result.gap>=-1,'Hero overlaps profile');
    assert(result.title.uncovered,'Heading covered by another layer');
    if(result.lead.top>=0&&result.lead.top<viewport.height-20)assert(result.lead.uncovered,'Introduction covered');
