@@ -19,9 +19,9 @@
     "source": "https://github.com/anshdeepofficial1/NOVA"
   },
   "zylo": {
-    "label": "Live website · sign-in required",
-    "source": "https://zylod.vercel.app/home",
-    "finalUrl": "https://zylod.vercel.app/sign-in"
+    "label": "Website preview",
+    "source": "https://zyloweb.vercel.app/home",
+    "finalUrl": "https://zyloweb.vercel.app/home"
   },
   "zmb": {
     "label": "Repository preview",
