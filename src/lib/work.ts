@@ -66,8 +66,8 @@ const selected:Work[]=[
       "Jetpack Compose",
       "JavaScript"
     ],
-    "href": "https://zylod.vercel.app/home",
-    "go": "zylod.vercel.app/home",
+    "href": "https://zyloweb.vercel.app/home",
+    "go": "zyloweb.vercel.app/home",
     "ext": true,
     "img": "/img/actual/zylo.jpg",
     "github": "https://github.com/anshdeepofficial1/ZYLO",
