@@ -28,7 +28,7 @@ I build applications, websites and software tools, and create visual stories thr
 | :--- | :--- | :--- |
 | **AniDash** | Anime discovery and web experience | [Website](https://anidashgo.vercel.app/) |
 | **VYBE** | Android music player | [Download](https://vybetune.vercel.app/download.html) |
-| **ZYLO** | Android media application | [Website](https://zylod.vercel.app/home) |
+| **ZYLO** | Android media application | [Website](https://zyloweb.vercel.app/home) |
 | **CopyCloud** | Cross-device file and text transfer | [Website](https://copycloud.me/) |
 | **SocialBoost** | Creator analytics and social tools | [Website](https://socialboostweb.vercel.app/) |
 
